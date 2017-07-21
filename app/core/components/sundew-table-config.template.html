@@ -1,0 +1,36 @@
+<md-dialog aria-label="Show Columns" md-theme="SundewTheme">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <legend style="padding:20px 0px 0px 20px;">
+                    <md-checkbox style="top:-12px" class="md-accent" ng-model="tc.selectAll" ng-change="tc.checkAll()">
+                    </md-checkbox>
+                    Show Columns
+                </legend>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="tc.cancel()">
+                    <md-icon md-font-icon="material-icons" aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div>
+                <div style="padding:10px 0px 0px 35px" layout="row" layout-wrap flex>
+                    <div flex="50" ng-repeat="item in tc.columns">
+                        <md-checkbox class="md-primary" ng-checked="tc.exists(item, tc.selected)" ng-click="tc.toggle(item, tc.selected)">
+                            {{ item.label }}
+                        </md-checkbox>
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button style="padding-right:40px" class="md-primary md-raised" ng-click="tc.answer()">
+                <md-icon md-menu-origin="" md-font-icon="material-icons">verified_user</md-icon>
+                OK
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

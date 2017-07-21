@@ -1,0 +1,94 @@
+.sd-table-header {}
+
+.sd-table-header span {
+    padding: 12px 0 5px 12px;
+    color: #757575;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.sd-table-search-container {
+    padding: 0 30px 0 30px;
+    margin: 20px 0 0 0;
+}
+
+.sd-table-search-page {
+    width: 42px;
+    margin: 25px 0 0 0;
+}
+
+.sd-table-search-page input {
+    text-align: center;
+}
+
+.sd-table-footer {
+    padding: 10px 0 10px;
+    font-size: 13px;
+    color: #757575;
+    white-space: nowrap;
+}
+
+.sd-table-container .center {
+    text-align: center;
+}
+
+.sd-table-select md-select-value {
+    border-bottom: none;
+    margin-top: -5px;
+}
+
+.sd-table tbody>tr #id {
+    text-align: center;
+}
+
+.sd-table-container {
+    margin: 5px;
+}
+
+.sd-table-content {
+    border-top: 0.5px solid #DDD;
+}
+
+.sd-table {
+    color: #757575;
+    display: table;
+    width: 100%;
+    margin-top: 14px;
+    padding: 0px 10px 0 5px;
+}
+
+.sd-table th {
+    font-size: 13px;
+    font-weight: bold;
+    color: #757575;
+    white-space: nowrap;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.sd-table td {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    margin: 0px;
+    height: 48px;
+    font-size: 13px;
+    color: #212121;
+    text-align: left;
+}
+
+.sd-table tr td,
+.sd-table tr th {
+    border-bottom: solid 1px #DDD;
+}
+
+.sd-table thead tr th:hover {
+    cursor: pointer;
+    border-bottom: 4px solid #79f5b8;
+}
+
+.sd-table tbody tr:hover td {
+    background-color: #e0f6eb;
+    border-bottom: 0.5px solid #79f5b8;
+}

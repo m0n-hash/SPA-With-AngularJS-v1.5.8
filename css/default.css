@@ -1,0 +1,81 @@
+md-input-container:not(.md-input-invalid)>md-icon.dodgerblue {
+    color: dodgerblue;
+}
+
+md-input-container:not(.md-input-invalid)>md-icon.green {
+    color: green;
+}
+
+md-input-container:not(.md-input-invalid)>md-icon.gold {
+    color: goldenrod;
+}
+
+md-input-container:not(.md-input-invalid)>md-icon.pink {
+    color: deeppink;
+}
+
+md-input-container:not(.md-input-invalid)>md-icon.darkslategrey {
+    color: slategray;
+}
+
+md-input-container:not(.md-input-invalid)>md-icon.lawngreen {
+    color: limegreen;
+}
+
+md-input-container:not(.md-input-invalid)>md-icon.mediumblue {
+    color: mediumblue;
+}
+
+md-input-container:not(.md-input-invalid)>md-icon.purple {
+    color: purple;
+}
+
+md-input-container.md-input-invalid>md-icon.dodgerblue,
+md-input-container.md-input-invalid>md-icon.green,
+md-input-container.md-input-invalid>md-icon.gold,
+md-input-container.md-input-invalid>md-icon.pink,
+md-input-container.md-input-invalid>md-icon.darkslategrey,
+md-input-container.md-input-invalid>md-icon.lawngreen,
+md-input-container.md-input-invalid>md-icon.purple,
+md-input-container.md-input-invalid>md-icon.mediumblue {
+    color: red;
+}
+
+md-input-container>md-icon.auto_complete {
+    float: left;
+    margin-top: 19px;
+}
+
+md-input-container>div.auto_complete {
+    margin-left: 32px;
+    display: block;
+}
+
+md-toast.md-success-toast-theme .md-toast-content {
+    background-color: #00c853;
+}
+
+md-toast.md-warn-toast-theme .md-toast-content {
+    background-color: #827717;
+}
+
+md-toast.md-info-toast-theme .md-toast-content {
+    background-color: #1e88e5;
+}
+
+md-toast.md-error-toast-theme .md-toast-content {
+    background-color: #d32f2f;
+}
+
+md-toast {
+    z-index: 10000;
+}
+
+.danger {
+    text-transform: none;
+    font-weight: bold;
+    color: #c2185b;
+}
+
+
+

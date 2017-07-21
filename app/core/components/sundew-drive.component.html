@@ -1,0 +1,70 @@
+<div md-whiteframe md-colors="{background: 'grey-50'}">
+    <div class="sd-drive-header" layout="row" layout-align="start center">
+        <md-input-container style="margin-left:10px" class="sd-table-search-container" md-no-float flex="35">
+            <md-icon style="color:#757575" md-menu-origin="" md-font-icon="material-icons">search</md-icon>
+            <input type="text" ng-model="tc.filterText" placeholder="Search ...">
+        </md-input-container>
+        <div ng-hide="true">
+            <!--{{(tc.filterData = (tc.data | filter: tc.filterText))}}-->
+        </div>
+
+        <div flex layout="row">
+            <span flex="40"></span>
+
+            <div style="margin-right:10px;" flex>
+                <section layout="row" layout-align="center center">
+
+                    <md-button flex class="groupX left " aria-label="Setting" type="button" ng-click="dc.loadFile()">
+                        <md-tooltip md-direction="bottom">Add</md-tooltip>
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">add</md-icon>
+                    </md-button>
+                    <md-button flex class="groupX middle " aria-label="Setting" type="button" ng-click="dc.fileChanged()">
+                        <md-tooltip md-direction="bottom">Delete</md-tooltip>
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">delete</md-icon>
+                    </md-button>
+                    <md-button flex class="groupX middle " aria-label="Setting" type="button" ng-click="">
+                        <md-tooltip md-direction="bottom">Arrange View</md-tooltip>
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">view_compact</md-icon>
+                    </md-button>
+                    <md-button flex class="groupX middle " aria-label="Setting" type="button" ng-click="">
+                        <md-tooltip md-direction="bottom">Details</md-tooltip>
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">error</md-icon>
+                    </md-button>
+
+                    <md-button flex class="groupX right md-primary" ng-click="tc.showDialog($event)" aria-label="Setting" type="button">
+                        <md-tooltip md-direction="bottom">Settings</md-tooltip>
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">settings</md-icon>
+                    </md-button>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="sd-drive-container" md-colors="{background: 'grey-50'}">
+        <input type="file" ng-hide="true" sd-file-model="dc.filesToUpload" sd-file-changed="dc.fileChanged()" id="uploadFile" />
+
+        <div style="margin-top:10px" layout="row" layout-wrap>
+            <div class="card-container" md-whiteframe md-colors="{background: 'grey-50'}" ng-repeat="f in dc.files" data-context-event="contextmenu"
+                data-context-menu="app/core/components/sundew-drive.contextmenu.html">
+                <div class="card-preview" layout="row" layout-align="center center" data-context-menu="sundew-drive.contextmenu.html">
+                    <md-icon class="preview-icon" md-colors="{color:'{{f.fileIc.color}}'}" md-font-icon="material-icons">{{f.fileIc.ico}}</md-icon>
+                </div>
+                <div class="card-detail" tabindex="{{f.id}}">
+                    <!--<md-tooltip md-direction="bottom">
+                        Name : {{f.name+'.'+f.extension}}
+                        <br> 
+                        Size : {{f.size}} 
+                        <br>
+                        Type : {{f.type}}
+                    </md-tooltip>
+                    -->
+                    <div class="title-wrap card-detail-item">
+                        <md-icon class="detail-ico" md-colors="{color:'{{f.fileIc.color}}'}" md-font-icon="material-icons">{{f.fileIc.ico}}</md-icon>
+                        {{f.name}}.{{f.extension}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

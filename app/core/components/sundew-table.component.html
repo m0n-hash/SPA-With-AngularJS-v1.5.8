@@ -1,0 +1,105 @@
+<div class="sd-table-container" md-whiteframe md-colors="{background: 'grey-50'}">
+
+    <div layout="row" layout-align="start center" class="sd-table-header">
+        <md-input-container style="margin-left:10px" class="sd-table-search-container" md-no-float flex="35">
+            <md-icon style="color:#757575" md-menu-origin="" md-font-icon="material-icons">search</md-icon>
+            <input type="text" ng-model="tc.filterText" placeholder="Search ...">
+        </md-input-container>
+        <div ng-hide="true">
+            {{(tc.filterData = (tc.data | filter: tc.filterText))}}
+        </div>
+
+        <span flex></span>
+
+        <div flex="10">
+            <section layout="row" layout-align="center center">
+                <md-button flex class="" aria-label="Setting" type="button" ng-click="tc.prev()">
+                    <md-icon md-menu-origin="" md-font-icon="material-icons">navigate_before</md-icon>
+                </md-button>
+                <md-input-container class="sd-table-search-page" md-no-float>
+                    <input type="text" style="border-bottom: 0px none;" sd-enter="tc.page_change(tc.currentPage)" ng-model="tc.currentPage">
+                </md-input-container>
+                <md-button flex class="" aria-label="Setting" type="button" ng-click="tc.next()">
+                    <md-icon md-menu-origin="" md-font-icon="material-icons">navigate_next</md-icon>
+                </md-button>
+            </section>
+        </div>
+
+        <div flex="45" layout="row">
+            <span flex="60"></span>
+
+            <div style="margin-right:10px;" flex>
+                <section layout="row" layout-align="center center">
+
+                    <md-button flex class="groupX left " aria-label="Setting" type="button" ng-click="tc.crud($event, 'I')">
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">add</md-icon>
+                    </md-button>
+                    <md-button flex class="groupX middle " aria-label="Setting" type="button" ng-click="tc.crud($event, 'E')">
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">edit</md-icon>
+                    </md-button>
+                    <md-button flex class="groupX middle " aria-label="Setting" type="button" ng-click="tc.crud($event, 'D')">
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">delete</md-icon>
+                    </md-button>
+
+                    <md-button flex class="groupX right md-primary" ng-click="tc.showDialog($event)" aria-label="Setting" type="button">
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">tune</md-icon>
+                    </md-button>
+                </section>
+            </div>
+        </div>
+
+    </div>
+    <md-content class="sd-table-content">
+        <table class="sd-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th ng-show="tc.isShow(col)" ng-repeat="col in tc.columns">
+                        <a ng-click="tc.sortType = col.request_name; tc.sortReverse = !tc.sortReverse;">
+                            {{col.label}}
+                        <span ng-show="tc.sortType == col.request_name && !tc.sortReverse">
+                            <md-icon md-menu-origin="" md-font-icon="material-icons">arrow_drop_down</md-icon>
+                        </span>
+                        <span ng-show="tc.sortType == col.request_name && tc.sortReverse">
+                            <md-icon md-menu-origin="" md-font-icon="material-icons">arrow_drop_up</md-icon>
+                        </span>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in tc.getFilters()|orderBy:tc.sortType:tc.sortReverse">
+                    <td>
+                        <md-checkbox ng-model="data.isChecked" ng-change="tc.check_changed(data)" style="margin-top:15px" class="md-primary" aria-label="Checkbox">
+                        </md-checkbox>
+                    </td>
+                    <td id="{{col.request_name}}" ng-show="tc.isShow(col)" ng-repeat="col in tc.columns">
+                        <!--{{data[col.request_name]}}-->
+                        {{tc.td_val(data,col)}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </md-content>
+    <div layout="row" layout-align="end center" class="sd-table-footer">
+        <span style="padding-left:10px" flex="12">
+            {{(tc.pData.page*tc.pData.pageSize)-(tc.pData.pageSize-1)}} - {{tc.pData.page*tc.pData.pageSize}} of {{tc.pData.total}}
+        </span>
+
+        <span class="center" flex>
+            
+        </span>
+
+        <div flex="12">
+            <span class="center">
+                Rows :
+            </span>
+            <md-input-container>
+                <md-select aria-label="Select" class="sd-table-select" ng-change="tc.pReload({ps:tc.pData.pageSize})" ng-model="tc.pData.pageSize">
+                    <md-option ng-repeat="value in tc.pData.pageSizeValue" ng-value="value">{{value}}</md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+
+    </div>
+</div>

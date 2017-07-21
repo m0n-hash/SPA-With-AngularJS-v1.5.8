@@ -1,0 +1,341 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    color: #3E2331;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+}
+
+.main-menu {
+    width: 48px;
+    background: #3E2331;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.sub-menu {
+    width: 220px;
+    background: #4D3343;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+
+/*Navigation Menu*/
+
+.navi-menu {
+    background: #4D3343;
+    color: white;
+    height: 44px;
+}
+
+
+/*to change background color of click button*/
+
+.navi-container {
+    height: 36px;
+}
+
+.navi-container:hover:not([disabled]) {
+    background: rgba(158, 158, 158, 0.2);
+}
+
+.navi-container.active {
+    border-bottom: 3px solid #F44336;
+}
+
+.navi-container:focus {
+    background: rgba(158, 158, 158, 0.2);
+    border-bottom: 3px solid #F44336;
+}
+
+
+/*
+md-nav-bar.md-SundewTheme-theme .md-button._md-nav-button:hover:not([disabled]) {
+    border-bottom: 3px solid #F44336;
+}
+font-size: 16px;
+*/
+
+
+/*First Nav Button*/
+
+md-nav-bar.md-SundewTheme-theme .md-button._md-nav-button {
+    padding: 3px 0 0 0;
+    margin-left: -2px;
+    color: white;
+    height: 37px;
+    font-size: 13px;
+}
+
+md-nav-bar.md-SundewTheme-theme .md-button._md-nav-button>span>md-icon {
+    color: white;
+    font-size: 18px;
+}
+
+md-nav-bar.md-SundewTheme-theme .md-button._md-nav-button:hover:not([disabled]) {
+    background-color: transparent;
+}
+
+
+/*Close Nav Button*/
+
+.navi-close {
+    /*
+    width: 26px;
+    */
+    width: 30px;
+}
+
+.navi-close>button {
+    /*
+    width: 26px;
+    */
+    width: 30px;
+    min-width: 26px;
+}
+
+md-nav-bar.md-SundewTheme-theme .md-button._md-nav-button.md-unselected {
+    color: white;
+}
+
+.md-button.md-icon-button.navi-button>md-icon {
+    color: white;
+}
+
+.md-button.md-icon-button.navi-button.md-nav {
+    width: 30px;
+    height: 30px;
+    color: white;
+    padding: 0px;
+    margin-left: -4px;
+}
+
+.ngscrollbar-container-x {
+    height: 10px;
+}
+
+
+/*
+.navi-menu>div {
+    width: 100%;
+    height: 60px;
+}
+
+.navi-menu .ngscroll-content-container>md-nav-bar,
+.navi-menu .ngscroll-content-container>md-nav-bar .md-nav-bar {
+    height: 44px;
+    padding: 0px;
+    position: absolute;
+    border-style: none;
+}
+*/
+
+.md-nav-bar>nav>ul>li {
+    height: 37px;
+    /*md-nav-bar nav-button height*/
+}
+
+
+/*Navigation Menu*/
+
+.content-pane {
+    background: #A294A8;
+}
+
+.content {
+    height: 98%;
+}
+
+.content .inner-content {
+    background: #FAFAFA;
+    padding: 10px;
+}
+
+.content-view{
+    height:97%;
+}
+
+.header {
+    padding: 4px;
+    height: 44px;
+    -webkit-box-shadow: 0px 1px 0px #482839;
+    -moz-box-shadow: 0px 1px 0px #482839;
+    box-shadow: 0px 1px 0px #482839;
+}
+
+.header .ico {
+    padding: 0 0 5px 12px;
+    color: white;
+}
+
+.header .title {
+    padding: 5px 0 0 10px;
+    color: white;
+}
+
+.header>div md-icon.md-SundewTheme-theme {
+    color: white;
+}
+
+.header>div .md-button.md-icon-button {
+    width: 30px;
+    padding: 0px;
+}
+
+.main-menu>div .md-button.md-icon-button {
+    width: 36px;
+    padding: 0;
+    margin: 16px 6px 0 6px;
+}
+
+.main-menu>div md-icon.md-SundewTheme-theme {
+    color: white;
+}
+
+.md-button.md-SundewTheme-theme.md-icon-button:hover:not([disabled]) md-icon.md-SundewTheme-theme {
+    color: #A294A8;
+}
+
+
+/*Menu Link & Toggle*/
+
+menu-link .md-button,
+menu-link>a>md-icon.md-SundewTheme-theme {
+    color: white;
+}
+
+menu-link .md-button:hover:not([disabled]):not(.active),
+menu-link .md-button:hover:not([disabled]):not(.active) md-icon.md-SundewTheme-theme,
+menu-toggle .md-button:hover:not([disabled]),
+menu-toggle>.md-button:hover:not([disabled]) md-icon.md-SundewTheme-theme {
+    color: #A294A8;
+}
+
+menu-link .md-button:hover:not([disabled]).active,
+menu-link .md-button:hover:not([disabled]).active md-icon.md-SundewTheme-theme {
+    color: #BC5851;
+}
+
+
+/*.active {
+    background-color: #e0f6eb;
+    border-top: 1px solid #79f5b8;
+    border-bottom: 1px solid #79f5b8;
+}*/
+
+menu-toggle .md-button:not(.active),
+menu-toggle .md-button:not(.active)>md-icon.md-SundewTheme-theme,
+menu-toggle .md-button>span>md-icon.md-SundewTheme-theme {
+    color: white;
+}
+
+menu-toggle .md-button.active,
+menu-toggle .md-button.active>md-icon.md-SundewTheme-theme,
+menu-toggle .md-button.active>span>md-icon.md-SundewTheme-theme {
+    color: #F44336;
+}
+
+menu-link>a>md-icon {
+    margin-left: 36px;
+}
+
+.side-menu,
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+
+.side-menu>li {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.menu-toggle-list {
+    max-height: 300px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+    -webkit-transition-property: max-height;
+    -moz-transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+    -moz-transition-property: max-height;
+    transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+    transition-property: max-height;
+}
+
+.menu-toggle-list.ng-hide {
+    max-height: 0;
+}
+
+.side-menu .menu-toggle-list .md-button {
+    display: block;
+    text-transform: none;
+}
+
+.side-menu .menu-toggle-list a.md-button {
+    display: block;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    font-weight: 500;
+}
+
+.md-button-toggle .md-toggle-icon.toggled {
+    transform: rotateZ(180deg);
+    -webkit-transform: rotateZ(180deg);
+}
+
+.side-menu .md-button-toggle .md-toggle-icon {
+    float: right;
+    background-size: 100% auto;
+    display: inline-block;
+    margin: auto 0 auto auto;
+    width: 24px;
+    color: darkgray;
+    transition: transform .3s ease-in-out;
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+}
+
+.side-menu .md-button {
+    border-radius: 0;
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 40px;
+    margin: 0;
+    max-height: 40px;
+    overflow: hidden;
+    padding: 0px 16px;
+    text-align: left;
+    text-decoration: none;
+    white-space: normal;
+    width: 100%;
+}
+
+.side-menu menu-toggle span {
+    padding-top: 12px;
+    padding-right: 0px;
+    padding-bottom: 12px;
+    padding-left: 0px;
+}
+
+.side-menu menu-toggle span:not(.md-toggle-icon) {
+    padding: 12px 0 12px 10px;
+}
+
+
+/*Menu Link & Toggle*/
+
+
+/*Menu Tab Control*/
+
+#menu-tab {
+    padding: 0px;
+}
+
+#menu-tab>md-tabs-wrapper {
+    visibility: hidden;
+    height: 0px;
+}
+
+
+/*Menu Tab Control*/

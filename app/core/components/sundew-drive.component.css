@@ -1,0 +1,48 @@
+.sd-drive-container {
+    margin: 5px;
+    height: auto;
+}
+
+.sd-drive-header {
+    margin: 5px;
+    border-bottom: 1px solid rgba(230, 230, 230, 0.96);
+}
+
+.card-container {
+    width: 200px;
+    height: 150px;
+    margin-left: 20px;
+    margin-bottom: 20px
+}
+
+.card-preview {
+    width: auto;
+    height: 113px;
+}
+
+.card-detail {
+    padding: 0px 10px 0px 10px;
+    cursor: pointer;
+}
+
+.title-wrap {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card-detail-item {
+    padding: 5px 0px 5px 0px;
+}
+
+div:focus{
+    background: #4285f4;
+}
+
+.preview-icon{
+    font-size:5em;
+}
+
+.detail-ico{
+    font-size:1em;
+}

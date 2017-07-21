@@ -1,0 +1,31 @@
+<ul class="menu">
+    <li class="title">File Actions:</li>
+    <li>
+        <md-icon md-menu-origin="" md-font-icon="material-icons">visibility</md-icon>
+        <a ng-click="dc.MenuClick('pre',f)">Preview</a>
+    </li>
+    <li>
+        <md-icon md-colors="{color:'indigo-800'}" md-menu-origin="" md-font-icon="material-icons">link</md-icon>
+        <a ng-click="dc.MenuClick('sha',f)">Get Sharable Link</a>
+    </li>
+    <li>
+        <md-icon md-colors="{color:'pink-A700'}" md-menu-origin="" md-font-icon="material-icons">assignment_return</md-icon>
+        <a ng-click="dc.MenuClick('mov',f)">Move To...</a>
+    </li>
+    <li>
+        <md-icon md-colors="{color:'yellow-A700'}" md-menu-origin="" md-font-icon="material-icons">edit</md-icon>
+        <a ng-click="dc.MenuClick('ren',f)">Rename</a>
+      </li>
+    <li>
+        <md-icon md-colors="{color:'green-A700'}" md-menu-origin="" md-font-icon="material-icons">file_download</md-icon>
+        <a target="_self" ng-href="{{f.public_url}}" download="{{f.name+'.'+f.extension}}">Download</a>
+    </li>
+    <li>
+        <md-icon md-colors="{color:'red-600'}" md-menu-origin="" md-font-icon="material-icons">delete</md-icon>
+        <a ng-click="dc.MenuClick('rem',f)">Remove</a>
+    </li>
+    <li>
+        <md-icon md-menu-origin="" md-font-icon="material-icons">short_text</md-icon>
+        <a ng-click="dc.MenuClick('det',f, $event)">Details...</a>
+    </li>
+</ul>

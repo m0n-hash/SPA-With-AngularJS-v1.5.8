@@ -1,0 +1,55 @@
+<md-dialog class="full-sc-dialog" aria-label="Show Columns" md-theme="SundewTheme">
+    <form ng-cloak name="customerForm">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <legend style="padding:20px 0px 0px 20px;">
+                    Customer {{rpc.title}}
+                </legend>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="rpc.cancel()">
+                    <md-icon md-font-icon="material-icons" aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div>
+                <div style="padding:10px 35px 0px 35px" layout-gt-xs="row" ng-repeat="st in rpc.structure">
+                    <md-input-container ng-if="rpc.isIdNText(st.name, st.type)" class="md-block" flex-gt-xs>
+                        <label>{{st.name}}</label>
+                        <md-icon md-font-icon="material-icons" md-colors="{color:'{{rpc.icons[st.order_index].color}}'}">{{rpc.icons[st.order_index].icon}}</md-icon>
+                        <input ng-attr-type="{{st.input_type}}" ng-attr-style="{{'height:'+rpc.input_height(st.length)}}" ng-model="rpc.customer[st.request_name]"
+                            ng-attr-name="{{'txt'+st.name}}" minlength="1" md-maxlength="{{st.length}}" required/>
+                        <div ng-messages="customerForm['txt'+st.name].$error">
+                            <div ng-message-exp="['required', 'minlength', 'maxlength']">
+                                Invalid {{st.name}}.
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container ng-if="rpc.isIdNDate(st.name, st.type)" class="md-block sd-datepicker" flex-gt-xs>
+                        <label style="left:50px">{{st.name}}</label>
+                        <!--<md-icon md-font-icon="material-icons" md-colors="{color:'{{rpc.icons[st.order_index].color}}'}">{{rpc.icons[st.order_index].icon}}</md-icon>-->
+                        <md-datepicker ng-attr-name="{{'txt'+st.name}}" ng-attr-style="{{'height:'+rpc.input_height(st.length)}}" ng-model="rpc.customer[st.request_name]" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
+                        <div ng-messages="customerForm['txt'+st.name].$error">
+                            <div ng-message-exp="['required']">
+                                Invalid {{st.name}}.
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-disabled="customerForm.$invalid" class="md-accent md-raised" ng-click="rpc.answer()">
+                <md-icon md-menu-origin="" md-font-icon="material-icons">verified_user</md-icon>
+                Save
+            </md-button>
+            <md-button style="padding-right:40px" class="md-primary" ng-click="rpc.cancel()">
+                <md-icon md-menu-origin="" md-font-icon="material-icons">verified_user</md-icon>
+                Cancel
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

@@ -1,0 +1,205 @@
+<!DOCTYPE>
+<html lang="en" ng-app="SundewApp" ng-controller="MainCtrl as mc">
+
+<head>
+    <title>{{mc.config.APP_NAME}}</title>
+    <link href="resources/img/sundew.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <!--
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-aria.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-messages.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-base64/2.0.5/angular-base64.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/md-data-table/2.2.0/md-data-table-templates.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/md-data-table/2.2.0/md-data-table.min.js"></script>
+    -->
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-animate.min.js"></script>
+    <script type="text/javascript" src="js/angular-aria.min.js"></script>
+    <script type="text/javascript" src="js/angular-messages.min.js"></script>
+    <script type="text/javascript" src="js/angular-material.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/angular-moment.min.js"></script>
+    <script type="text/javascript" src="js/angular-base64.min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/lodash.min.js"></script>
+    <script type="text/javascript" src="js/angular-sanitize.js"></script>
+    <script type="text/javascript" src="js/angular-material-icons.min.js"></script>
+    <script type="text/javascript" src="js/md-data-table-templates.min.js"></script>
+    <script type="text/javascript" src="js/md-data-table.min.js"></script>
+
+    <!--Angular Event Calendar-->
+    <script type="text/javascript" src="js/angular-material-event-calendar.min.js"></script>
+    <!--Context Menu-->
+    <!--<script type="text/javascript" src="js/ng-contextmenu.min.js"></script>-->
+    <script type="text/javascript" src="js/ngContextMenu.js"></script>
+    <!--Clipboard js-->
+    <script type="text/javascript" src="js/angular-clipboard.js"></script>
+    <!--https://github.com/omichelsen/angular-clipboard-->
+    <!--cookies-->
+    <script type="text/javascript" src="js/angular-cookies.min.js"></script>
+    <!--
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-cookies.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/md-data-table/2.2.0/md-data-table-style.min.css" rel="stylesheet" />
+    <link href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css" rel="stylesheet" />
+    -->
+
+    <!--Javascript Bandwidth-->
+    <!--<script type="text/javascript" src="js/jsbandwidth.js"></script>-->
+
+    <!--Angular/Jquery Custom Scrollbar-->
+    <script type="text/javascript" src="js/ngscrollbar.min.js"></script>
+
+    <!--Custom CSS-->
+    <link href="css/default.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/angular-material.min.css" />
+
+
+    <link href="css/md-data-table-style.min.css" rel="stylesheet" />
+    <link href="css/material-design-icons/material-icons.css" rel="stylesheet" />
+    <link href="css/angular-material-event-calendar.min.css" rel="stylesheet" />
+    <link href="css/eventCalendar-primary.scss" rel="stylesheet" />
+
+    <!--Components css-->
+    <link rel="stylesheet" href="app/core/components/sundew-table.component.css" />
+    <link rel="stylesheet" href="app/core/components/sundew-drive.component.css" />
+
+</head>
+
+<body ng-cloak md-theme="SundewTheme">
+
+    <div flex layout="row" class="main">
+        <div flex layout="row">
+            <div class="main-menu" layout="column">
+                <div class="header" layout="row">
+                    <img src="resources/img/logo-white.png" alt="Sundew Myanmar" width="36" height="36">
+                </div>
+                <div flex>
+                    <!--Header Menu-->
+                    <md-button ng-repeat="mn in mc.menu.menus" aria-label="mn.name" class="navi-button md-icon-button" ng-click="mc.load_child(mn)">
+                        <md-tooltip md-direction="bottom">{{mn.name}}</md-tooltip>
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">{{mn.icon_mi}}</md-icon>
+                    </md-button>
+                </div>
+            </div>
+            <div ng-hide="mc.menu_toggle" class="sub-menu" layout="column">
+                <div class="header" layout="row">
+                    <md-icon class="ico" flex="20" md-font-icon="material-icons">{{mc.childMenu.icon_mi}}</md-icon>
+                    <div class="title" flex>
+                        {{mc.childMenu.name}}
+                    </div>
+                </div>
+                <div flex class="side-menu">
+                    <!--Child Menu-->
+                    <li ng-repeat="section in mc.childMenu.pages" class="parent-list-item" ng-class="{'parentActive' : mc.menu.isSectionSelected(section)}">
+                        <h2 class="menu-heading" ng-if="section.type === 'heading'" id="heading_{{ section.name | nospace }}">
+                            {{section}}
+                        </h2>
+                        <menu-link section="section" ng-if="section.type === 'link'"></menu-link>
+                        <menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
+                    </li>
+                </div>
+            </div>
+            <div class="content-pane" flex layout="column">
+                <div class="navi-menu" layout="row">
+                    <!--Nav Menu-->
+                    <div flex>
+                        <div ng-scrollbar scrollbar-x="true" scrollbar-y="false" scrollbar-config="{show: false}">
+                            <md-nav-bar nav-bar-aria-label="navigation links">
+                                <div tabindex="-1" ng-class="mc.getClass(nav.state)" class="navi-container" layout="row" ng-repeat="nav in mc.menu_navs">
+                                    <md-nav-item md-no-ink md-nav-click="mc.nav_click(nav)">
+                                        <md-icon style="color:white;" class="md-primary" flex="20" md-font-icon="material-icons">{{nav.icon_mi}}</md-icon>
+                                        {{nav.name}}
+
+                                    </md-nav-item>
+
+                                    <md-nav-item class="navi-close md-icon-button" md-nav-click="mc.close_click(nav)">
+                                        <md-icon style="color:white;" md-menu-origin="" md-font-icon="material-icons">clear</md-icon>
+                                    </md-nav-item>
+                                </div>
+                            </md-nav-bar>
+                        </div>
+                    </div>
+
+                    <div flex="10">
+                        <md-button aria-label="menu" class="navi-button md-icon-button" ng-click="">
+                            <md-icon md-menu-origin="" md-font-icon="material-icons">notifications</md-icon>
+                        </md-button>
+                        <md-button aria-label="menu" class="navi-button md-icon-button" ng-click="">
+                            <md-icon md-menu-origin="" md-font-icon="material-icons">email</md-icon>
+                        </md-button>
+                        <md-button aria-label="menu" class="navi-button md-icon-button" ng-click="">
+                            <md-icon md-menu-origin="" md-font-icon="material-icons">person</md-icon>
+                        </md-button>
+                    </div>
+                </div>
+
+                <div flex class="content" layout="row" layout-wrap layout-margin ng-cloak layout-align="space-around">
+                    <div class="inner-content" md-whiteframe layout-padding flex="100" flex-gt-sm="97">
+                        <md-tabs id="menu-tab" md-selected="mc.selectedTab" md-border-bottom md-dynamic-height>
+                            <md-tab ng-repeat="tab in mc.menu_navs" label="tab.name">
+                                <md-content class="md-padding content-view">
+                                    <div dynamic-controller="tab.controller" controller-as="tab.controllerAs">
+                                        <div ng-include="tab.template">
+                                        </div>
+                                    </div>
+                                </md-content>
+                            </md-tab>
+                        </md-tabs>
+                    </div>
+                </div>
+                <!--<div ng-view="" class="content-view" md-whiteframe layout-padding flex="100" flex-gt-sm="97">
+                </div>-->
+            </div>
+        </div>
+
+        <!--/.NAVBAR END-->
+        <!--App & Modules-->
+        <script type="text/javascript" src="app/app.js"></script>
+        <script type="text/javascript" src="app/app.module.js"></script>
+        <!--Components-->
+        <script type="text/javascript" src="app/core/components/sundew-table-config.template.js"></script>
+        <script type="text/javascript" src="app/core/components/sundew-table.component.js"></script>
+        <script type="text/javascript" src="app/core/components/sundew-table.js"></script>
+        <script type="text/javascript" src="app/core/components/sundew-drive.component.js"></script>
+        <script type="text/javascript" src="app/core/components/sundew-drive.js"></script>
+        <!--Services-->
+        <script type="text/javascript" src="app/core/config/app.config.js"></script>
+        <script type="text/javascript" src="app/core/services/menu.service.js"></script>
+        <script type="text/javascript" src="app/core/services/http.service.js"></script>
+        <script type="text/javascript" src="app/core/services/store.service.js"></script>
+        <script type="text/javascript" src="app/core/services/general.service.js"></script>
+        <script type="text/javascript" src="app/core/services/route.service.js"></script>
+        <!--Directives-->
+        <script type="text/javascript" src="app/core/directives/menulink.directive.js"></script>
+        <script type="text/javascript" src="app/core/directives/menutoggle.directive.js"></script>
+        <script type="text/javascript" src="app/core/directives/enter.directive.js"></script>
+        <script type="text/javascript" src="app/core/directives/finishRender.directive.js"></script>
+        <script type="text/javascript" src="app/core/directives/rightClick.directive.js"></script>
+        <script type="text/javascript" src="app/core/directives/fileModel.directive.js"></script>
+        <script type="text/javascript" src="app/core/directives/dynamicController.directive.js"></script>
+        <!--Filter-->
+        <script type="text/javascript" src="app/core/filters/range.filter.js"></script>
+        <!--Controllers-->
+        <script type="text/javascript" src="app/main.controller.js"></script>
+        <script type="text/javascript" src="app/dashboard.controller.js"></script>
+        <script type="text/javascript" src="app/system/admin.customer.controller.js"></script>
+        <script type="text/javascript" src="app/system/admin.customer.popup.js"></script>
+        <script type="text/javascript" src="app/dashboard/staff.calendar.controller.js"></script>
+</body>
+
+</html>
