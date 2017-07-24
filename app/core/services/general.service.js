@@ -7,7 +7,7 @@
 
             self.isNumber = function (n) {
                 return !isNaN(parseFloat(n)) && isFinite(n);
-            }
+            };
 
             self.success = function (msg) {
                 $window.scrollTo(0, 0);
@@ -18,7 +18,7 @@
                     .theme('success-toast')
                     .hideDelay(3000)
                 );
-            }
+            };
 
             self.warn = function (msg) {
                 $window.scrollTo(0, 0);
@@ -29,7 +29,7 @@
                     .theme('warn-toast')
                     .hideDelay(3000)
                 );
-            }
+            };
 
             self.info = function (msg) {
                 $window.scrollTo(0, 0);
@@ -40,7 +40,7 @@
                     .theme('info-toast')
                     .hideDelay(3000)
                 );
-            }
+            };
 
             self.error = function (msg) {
                 $window.scrollTo(0, 0);
@@ -51,7 +51,7 @@
                     .theme('error-toast')
                     .hideDelay(3000)
                 );
-            }
+            };
 
             self.confirmation = function (data, title, content, confirmLabel, cancelLabel, confirmFunc, cancelFunc, ev) {
                 var confirm = $mdDialog.confirm()
@@ -71,15 +71,15 @@
                         cancelFunc(data);
                     return;
                 });
-            }
+            };
 
             self.TimestampToDate = function (timestamp) {
                 return self.formatDateHMS(new Date(timestamp));
-            }
+            };
 
             self.DateToTimestamp = function (date) {
                 return date.getTime();
-            }
+            };
 
             self.formatDate = function (fromdate) {
                 var dd = fromdate.getDate();
@@ -93,7 +93,7 @@
                 }
 
                 return dd + '-' + mm + '-' + yyyy;
-            }
+            };
 
             self.formatDateHMS = function (fromdate) {
                 console.log(fromdate);
@@ -122,7 +122,7 @@
                     sec = '0' + sec;
 
                 return dd + '-' + mm + '-' + yyyy + ' ' + hr + ':' + min + ':' + sec;
-            }
+            };
 
             self.formatString = function (string) {
                 if (arguments.length > 1) {
@@ -139,9 +139,9 @@
                 }
 
                 return input;
-            }
+            };
 
             return this;
         }
-    ])
+    ]);
 })();

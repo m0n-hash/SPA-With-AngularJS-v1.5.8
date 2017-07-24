@@ -6,59 +6,61 @@
         "SundewApp.Controllers"
     ]);
 
+    //Application Theming
     app.config(function ($mdThemingProvider) {
-            /*Default Theme*/
-            $mdThemingProvider.theme('SundewTheme')
-                .primaryPalette('blue', {
-                    'default': '500',
-                    'hue-1': '50',
-                    'hue-2': '100',
-                    'hue-3': '900'
-                })
-                .accentPalette('green', {
-                    'default': 'A400',
-                    'hue-1': '50',
-                    'hue-2': 'A100',
-                    'hue-3': 'A200'
-                }).warnPalette('red', {
-                    'default': 'A700',
-                    'hue-1': '50',
-                    'hue-2': '100',
-                    'hue-3': '600',
+        /*Default Theme*/
+        $mdThemingProvider.theme('SundewTheme')
+            .primaryPalette('blue', {
+                'default': '500',
+                'hue-1': '50',
+                'hue-2': '100',
+                'hue-3': '900'
+            })
+            .accentPalette('green', {
+                'default': 'A400',
+                'hue-1': '50',
+                'hue-2': 'A100',
+                'hue-3': 'A200'
+            }).warnPalette('red', {
+                'default': 'A700',
+                'hue-1': '50',
+                'hue-2': '100',
+                'hue-3': '600',
+            });
+    });
+
+    //take all whitespace out of string
+    app.filter('nospace', function () {
+        return function (value) {
+            return (!value) ? '' : value.replace(/ /g, '');
+        };
+    });
+
+    //replace uppercase to regular case
+    app.filter('humanizeDoc', function () {
+        return function (doc) {
+            if (!doc) return;
+
+            if (doc.type === 'directive') {
+                return doc.name.replace(/([A-Z])/g, function ($1) {
+                    return '-' + $1.toLowerCase();
                 });
-        }).config(function ($routeProvider) {
-            $routeProvider.otherwise({
-                redirectTo: '/'
-            });
+            }
 
-            $routeProvider.when('/', {
-                templateUrl: 'view/dashboard.html',
-                controller: 'DashboardCtrl as dc'
-            }).when('/admin/customer', {
-                templateUrl: 'view/system/admin.customer.html',
-                controller: 'CustomerCtrl as cc'
-            }).when('/staff/calendar', {
-                templateUrl: 'view/dashboard/staff.calendar.html',
-                controller: 'StaffCtrl as sc'
-            });
-        }) //take all whitespace out of string
-        .filter('nospace', function () {
-            return function (value) {
-                return (!value) ? '' : value.replace(/ /g, '');
-            };
-        })
-        //replace uppercase to regular case
-        .filter('humanizeDoc', function () {
-            return function (doc) {
-                if (!doc) return;
+            return doc.label || doc.name;
+        };
+    });
+/*
+    app.run(function ($window, auth) {
+        if (auth.isLoggedIn()) {
+            return;
+        }
 
-                if (doc.type === 'directive') {
-                    return doc.name.replace(/([A-Z])/g, function ($1) {
-                        return '-' + $1.toLowerCase();
-                    });
-                }
+        //TODO: Redirect to Login page
+        //$window.location = "#";
 
-                return doc.label || doc.name;
-            };
-        });
+        //Make sure bootstrap process is stopped
+        //throw new Error('Access denied');
+    });
+*/
 })();
