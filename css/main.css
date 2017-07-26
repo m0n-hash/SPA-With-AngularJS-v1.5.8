@@ -1,5 +1,5 @@
 body {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     color: #3E2331;
 }
 
@@ -152,8 +152,8 @@ md-nav-bar.md-SundewTheme-theme .md-button._md-nav-button.md-unselected {
     padding: 10px;
 }
 
-.content-view{
-    height:97%;
+.content-view {
+    height: 97%;
 }
 
 .header {

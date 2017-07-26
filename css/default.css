@@ -1,3 +1,7 @@
+.md-button {
+    text-transform: none !important;
+}
+
 md-input-container:not(.md-input-invalid)>md-icon.dodgerblue {
     color: dodgerblue;
 }
@@ -76,6 +80,3 @@ md-toast {
     font-weight: bold;
     color: #c2185b;
 }
-
-
-

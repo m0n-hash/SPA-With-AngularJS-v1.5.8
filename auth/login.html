@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html lang="en" ng-app="SundewApp.Auth">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+    <title>{{ac.config.APP_NAME}} Login</title>
+    <link href="../resources/img/sundew.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <script type="text/javascript" src="../js/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../js/angular-aria.min.js"></script>
+    <script type="text/javascript" src="../js/angular-messages.min.js"></script>
+    <script type="text/javascript" src="../js/angular-material.min.js"></script>
+    <script type="text/javascript" src="../js/angular-route.min.js"></script>
+    <script type="text/javascript" src="../js/angular-material-icons.min.js"></script>
+    <script type="text/javascript" src="../js/angular-base64.min.js"></script>
+
+    <!--cookies-->
+    <script type="text/javascript" src="../js/angular-cookies.min.js"></script>
+
+    <link rel="stylesheet" href="../css/angular-material.min.css" />
+
+    <link href="../css/material-design-icons/material-icons.css" rel="stylesheet" />
+
+    <!--Custom CSS-->
+    <link href="../css/auth.css" rel="stylesheet" />
+    <link href="../css/default.css" rel="stylesheet" />
+
+</head>
+
+<body ng-cloak md-theme="SundewTheme" ng-controller="AuthCtrl as ac">
+
+    <div flex class="main">
+        <div style="width: 100%; height: 100%; background-size: cover;" layout="column" layout-align="center center">
+
+            <md-card style="width: 500px; margin: 0;" layout-padding md-whiteframe="10">
+                <form name="loginForm" id="loginForm" novalidate ng-model="loginForm">
+                    <div class="auth-title" layout="column">
+                        <div flex="15" class="logo">
+                            <img src="../resources/img/logo-white.png" alt="Sundew Myanmar" width="36" height="36">
+                        </div>
+                        <h3 class="auth-caption" flex>Welcome!</h3>
+                    </div>
+
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Email</label>
+                        <md-icon md-font-icon="material-icons" md-colors="{color:'pink-800'}">person</md-icon>
+                        <input id="txtuser" type="text" ng-model="ac.user">
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Password</label>
+                        <md-icon md-font-icon="material-icons" md-colors="{color:'blue-grey-800'}">vpn_key</md-icon>
+                        <input id="txtpwd" sd-enter="ac.login_click()" type="password" ng-model="ac.password">
+                    </md-input-container>
+                    <md-button md-no-ink style="background-color:#3E2331;" class="md-primary md-raised auth-button" ng-click="ac.login_click()">Log In</md-button>
+
+                    <p class="description" align="center">Copyright © 2011 - 2017 by SUNDEW MYANMAR.
+                        <br>All rights reserved.</p>
+                </form>
+            </md-card>
+        </div>
+
+    </div>
+
+    <!--Controller-->
+    <script type="text/javascript" src="../app/auth.controller.js"></script>
+    <!--modules-->
+    <script type="text/javascript" src="../app/auth.module.js"></script>
+    <!--Services-->
+    <script type="text/javascript" src="../app/core/config/app.config.js"></script>
+    <script type="text/javascript" src="../app/core/services/http.service.js"></script>
+    <script type="text/javascript" src="../app/core/services/store.service.js"></script>
+    <script type="text/javascript" src="../app/core/services/general.service.js"></script>
+    <script type="text/javascript" src="../app/core/services/localstorage.service.js"></script>
+    <!--directive-->
+    <script type="text/javascript" src="../app/core/directives/enter.directive.js"></script>
+    
+</body>
+
+</html>

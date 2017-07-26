@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #eee;
+    background: #573948;
+    -webkit-font-smoothing: antialiased;
+}
+
+#loginForm {
+    padding: 0px;
+    margin: 0px;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.auth-title {
+    background: #3E2331;
+    margin: 0px;
+    padding-bottom: 0px;
+    height: 80px;
+}
+
+.description {
+    font-size: 10px;
+    color: #3E2331;
+}
+
+.auth-caption {
+    color: #eee;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.auth-button {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    letter-spacing: 1px;
+    border: 0;
+    border-bottom: 2px solid #4D3343;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.auth-button:hover:not([disabled]) {
+    background-color: white;
+}
+
+.md-button {
+    margin: 0px;
+}

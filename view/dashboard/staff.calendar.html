@@ -13,11 +13,22 @@
         </div>
     </div>
 
+    <div>
+        <form>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Password</label>
+            <md-icon md-font-icon="material-icons" md-colors="{color:'brown-600'}">vpn_key</md-icon>
+            <input id="txtpwd" sd-enter="ac.login_click()" type="password" ng-model="ac.password">
+        </md-input-container>
+        </form>
+    </div>
+
     {{sc.test}}
 
     <div tabindex="-1" class="navi-container" style="width:100px;height:100px">
         Hello World
     </div>
+
 
 
     <div ng-repeat="component in components" dynamic-controller="component.controller" controller-as="'bb'">

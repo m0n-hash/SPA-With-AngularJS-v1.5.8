@@ -38,3 +38,4 @@ js/ng-contextmenu.min.js
 js/ngContextMenu.js
 js/ngscrollbar.min.js
 js/underscore-min.js
+app/core/tests/test.module.js

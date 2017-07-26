@@ -31,6 +31,11 @@
                             controller: 'StaffCtrl',
                             controllerAs: 'sc'
                         };
+                    default:{
+                        return {
+                            //TODO: Page not found
+                        };
+                    }
                 }
             }
         };
