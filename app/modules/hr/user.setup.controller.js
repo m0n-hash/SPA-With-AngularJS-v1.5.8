@@ -1,20 +1,17 @@
 (function () {
     'use strict';
 
-    angular.module('SundewApp.Controllers').controller('CustomerCtrl', [
-        '$scope', '$mdDialog', '$q', '$rootScope', '$log', '$location', 'http', 'store', 'config', 'general',
-        function ($scope, $mdDialog, $q, $rootScope, $log, $location, http, store, config, general) {
+    angular.module('SundewApp.Controllers').controller('UserCtrl', [
+        '$scope', '$mdDialog', '$q', '$rootScope', '$log', '$location', 'http', 'config', 'general',
+        function ($scope, $mdDialog, $q, $rootScope, $log, $location, http, config, general) {
             var self = this;
+            var store = $rootScope.store;
             self.structure = [];
-            self.customer = {};
-            self.customers = [];
+            self.user = {};
+            self.users = [];
             self.columns = [];
-            self.keys = [
-                'id',
-                'name',
-                'email'
-            ];
-            self.selectedCustomer = {};
+            self.keys = [];
+            self.selectedUser = {};
 
             /*Table Variables*/
             self.page = 1;
@@ -63,8 +60,9 @@
 
             /*Paginate Request*/
             self.paginate = function (page) {
+                //TODO: Start Progress
                 //$scope.$parent.progress(true);
-                http.PAGINATE(config.API_URL + 'sample/customer', page, self.pageSize, store.HEADER(), self.paginateCallback, self.err_callback);
+                http.PAGINATE(config.API_URL + 'user', page, self.pageSize, store.HEADER(), self.paginateCallback, self.err_callback);
             };
 
             self.isTableReady = false;
@@ -80,25 +78,27 @@
             };
 
             self.paginateCallback = function (response) {
-                self.customers = [];
+                console.log(response);
+                self.users = [];
                 self.pageCount = response.data.content.page_count;
                 self.total = response.data.content.total;
                 self.set_pdata();
                 self.isTableReady = true;
                 angular.forEach(response.data.content.data, function (row, key) {
-                    self.customers.push(row);
+                    self.users.push(row);
                 });
-
+                //TODO: Stop Progress
                 //$scope.$parent.progress(false);
             };
 
             /*Init*/
             self.init = function () {
+                console.log(store.AUTHORIZE());
                 self.set_pdata();
-                //$scope.$parent.header("Customer Setup");
+                //TODO: Start Progress
                 //$scope.$parent.progress(true);
 
-                var data = http.GET(config.API_URL + 'sample/customer/struct', store.HEADER(), self.struct_callback, self.err_callback);
+                var data = http.GET(config.API_URL + "user/struct", store.HEADER(), self.struct_callback, self.err_callback);
                 self.page = 1;
                 self.paginate(self.page);
             };
@@ -108,13 +108,16 @@
                 self.keys = [];
                 angular.forEach(self.structure, function (value, key) {
                     self.keys.push(value.request_name);
-                    self.columns.push(value);
+                    if (value.request_name !== "password")                        
+                        self.columns.push(value);
                 });
+                console.log(self.keys);
+                console.log(self.columns);
+                console.log(self.structure);
             };
 
             self.err_callback = function (response) {
-                //$scope.$parent.progress(false);
-                general.error("Internal Server Error!");
+                general.data_error(response);
             };
 
             //Load Dialog
@@ -124,22 +127,22 @@
                     self.paginate(self.page);
                     general.success("Delete Success!");
                 } else
-                    general.error("Internal Server Error!");
+                    general.data_error(response);
 
                 //$scope.$parent.progress(false);
             };
 
             self.confirmFunc = function () {
                 //$scope.$parent.progress(true);
-                http.DELETE(config.API_URL + 'sample/customer/' + self.selectedCustomer.id, store.HEADER(), self.delete_callback, self.err_callback);
+                http.DELETE(config.API_URL + 'user/' + self.selectedUser.id, store.HEADER(), self.delete_callback, self.err_callback);
             };
 
             //CRUD Dialog
             self.showDialog = function (ev, row, type) {
-                self.selectedCustomer = row;
+                self.selectedUser = row;
                 // Appending dialog to document.body to cover sidenav in docs app
                 if (type == "D") {
-                    general.confirmation("Customer Delete", "Are you sure to delete " + row.name + "?",
+                    general.confirmation("Staff Delete", "Are you sure to delete " + row.name + "?",
                         "Delete", "Cancel", self.confirmFunc, null, ev);
                     return;
                 }
@@ -149,11 +152,11 @@
                             structure: angular.copy(self.structure),
                             status: type,
                             event: ev,
-                            customer: angular.copy(row)/*,
-                            progress: $scope.$parent.progress*/
+                            user: angular.copy(row)
+                            /*progress: $scope.$parent.progress*/
                         },
-                        controller: "CustomerPopupCtrl as rpc",
-                        templateUrl: 'view/system/admin.customer.popup.html',
+                        controller: "UserPopupCtrl as rpc",
+                        templateUrl: 'view/hr/user.setup.popup.html',
                         parent: angular.element(document.body),
                         targetEvent: ev,
                         clickOutsideToClose: false,

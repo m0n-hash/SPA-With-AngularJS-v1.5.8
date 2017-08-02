@@ -27,8 +27,14 @@
             });
     });
 
-    app.controller("AuthCtrl", ["$scope", "$location", "$rootScope", "config", "http",
-        function ($scope, $location, $rootScope, config, http) {
+    /*
+    config -> changable settings and routes
+    http -> api communication helper
+    store -> user credentials storage helper
+    general -> general helpers
+    */
+    app.controller("AuthCtrl", ["$scope", "$rootScope", "$window", "config", "store", "general", "auth",
+        function ($scope, $rootScope, $window, config, store, general, auth) {
             var ac = this;
 
             ac.config = config;
@@ -51,21 +57,13 @@
                 var xheaders = {};
                 xheaders["Content-Type"] = "application/json";
 
-                http.POST(config.API_URL + "auth", xheaders, data,
-                    ac.success_callback, ac.error_callback);
+                auth.logIn(data, ac.success_callback, ac.error_callback);
             };
 
             ac.success_callback = function (response) {
-                console.log('success->');
-                console.log(response);
-                if(response.data.code==200){
-                    
+                if (response.data.code == 200) {
+                    $window.location = "../index.html";
                 }
-            };
-
-            ac.error_callback = function (response) {
-                console.log('error->');
-                console.log(response);
             };
 
             ac.init();

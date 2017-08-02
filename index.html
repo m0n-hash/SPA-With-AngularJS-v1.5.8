@@ -2,6 +2,9 @@
 <html lang="en" ng-app="SundewApp" ng-controller="MainCtrl as mc">
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
     <title>{{mc.config.APP_NAME}}</title>
     <link href="resources/img/sundew.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     <!--
@@ -64,10 +67,9 @@
     <script type="text/javascript" src="js/ngscrollbar.min.js"></script>
 
     <!--Custom CSS-->
+    <link rel="stylesheet" href="css/angular-material.min.css" />
     <link href="css/default.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/angular-material.min.css" />
-
 
     <link href="css/md-data-table-style.min.css" rel="stylesheet" />
     <link href="css/material-design-icons/material-icons.css" rel="stylesheet" />
@@ -201,7 +203,9 @@
         <script type="text/javascript" src="app/dashboard.controller.js"></script>
         <script type="text/javascript" src="app/modules/system/admin.customer.controller.js"></script>
         <script type="text/javascript" src="app/modules/system/admin.customer.popup.js"></script>
-        <script type="text/javascript" src="app/modules/dashboard/staff.calendar.controller.js"></script>
+        <script type="text/javascript" src="app/modules/dashboard/user.calendar.controller.js"></script>
+        <script type="text/javascript" src="app/modules/hr/user.setup.controller.js"></script>
+        <script type="text/javascript" src="app/modules/hr/user.setup.popup.js"></script>
         <!--Run-->
         <script type="text/javascript" src="app/core/run/statelistener.service.js"></script>
         <script type="text/javascript" src="app/core/run/rootscope.service.js"></script>

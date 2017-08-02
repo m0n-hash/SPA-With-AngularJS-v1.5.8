@@ -80,3 +80,30 @@ md-toast {
     font-weight: bold;
     color: #c2185b;
 }
+
+.full-sc-dialog {
+    max-width: 100%;
+    max-height: 100%;
+    width: 80%;
+    height: 80%;
+    border-radius: 5;
+}
+
+.sd-datepicker {
+    margin-left: -15px;
+}
+
+.md-datepicker-input-container {
+    width: 94%;
+}
+
+.sd-datepicker .md-datepicker-input {
+    margin-left: -16px;
+    max-width: 100%;
+    width: 50%;
+}
+
+.md-datepicker-triangle-button.md-button.md-icon-button {
+    position: relative;
+    margin-left: -45px;
+}

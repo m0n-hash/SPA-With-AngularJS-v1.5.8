@@ -53,6 +53,19 @@
                 );
             };
 
+            self.data_error = function (response) {
+                if (response.status == 502 || response.status == 400) {
+                    self.error(response.statusText + ": Please check your internet connection and try again!");
+                } else if (response.data === null) {
+                    self.warn("Response is null! Please check your internet connection and try again!");
+                } else if (response.data.code == 401) {
+                    //Alert Server reply error message
+                    self.warn(response.data.content.message);
+                }
+                //TODO: else if(...)
+                //Current only test with login credentials
+            };
+
             self.confirmation = function (data, title, content, confirmLabel, cancelLabel, confirmFunc, cancelFunc, ev) {
                 var confirm = $mdDialog.confirm()
                     .title(title)
@@ -97,7 +110,7 @@
 
             self.formatDateHMS = function (fromdate) {
                 console.log(fromdate);
-                
+
                 var dd = fromdate.getDate();
                 var mm = fromdate.getMonth() + 1; //January is 0!
                 var yyyy = fromdate.getFullYear();

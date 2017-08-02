@@ -24,25 +24,25 @@
                     separator:false
                 }]
             },{
-                name: "Staff Home",
+                name: "User Home",
                 icon_mi: "home",
                 type: "toggle",
                 separator: false,
                 pages: [{
                     name: "Calendar",
-                    state: "#/staff/calendar",
+                    state: "#/user/calendar",
                     icon_mi: "event_note",
                     type: "link",
                     separator: false
                 }, {
                     name: "Cash (W/D)",
-                    state: "#/staff/cash",
+                    state: "#/user/cash",
                     icon_mi: "attach_money",
                     type: "link",
                     separator: false
                 }, {
                     name: "Attendance",
-                    state: "#/staff/attendance",
+                    state: "#/user/attendance",
                     icon_mi: "event_available",
                     type: "link",
                     separator: false
@@ -78,7 +78,26 @@
             name: "Human Resource",
             icon_mi: "work",
             pages: [{
-
+                name:"HR Setup",
+                icon_mi:"assignment_ind",
+                type:"toggle",
+                separator:false,
+                pages:[{
+                    name:"Position",
+                    state:"#/hr/position",
+                    icon_mi:"dashboard",
+                    separator:false
+                },{
+                    name:"Department",
+                    state:"#/hr/department",
+                    icon_mi:"assessment",
+                    separator:false
+                },{
+                    name:"Staff Registration",
+                    state:"#/hr/staff/setup",
+                    icon_mi:"person",
+                    separator:false
+                }]
             }]
         };
 

@@ -5,8 +5,6 @@
         $rootScope.auth = auth;
 
         $rootScope.store = store;
-
-        console.log('its here on rootscope.service.js');
     }
 
     //Inject Dependencies

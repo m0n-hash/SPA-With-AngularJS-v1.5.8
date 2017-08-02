@@ -1,0 +1,10 @@
+<div flex layout="row" layout-fill>
+    <md-content flex="100">
+
+        <div ng-if="uc.isTableReady">
+            <sd-table columns="uc.columns" data="uc.users" p-load="uc.loadPage(page,ps)" p-next="uc.next(ps)" p-prev="uc.prev(ps)"
+                p-reload="uc.reload(ps)" p-data="uc.pdata" p-crud="uc.showDialog(ev, row, type)"></sd-table>
+        </div>
+
+    </md-content>
+</div>

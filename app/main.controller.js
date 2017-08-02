@@ -65,9 +65,7 @@
             //Nav Bar Nav Add
             mc.addNav = function (nav) {
                 var idx = searchNav(nav);
-                console.log('idx=' + idx);
                 //Don't Continute When Exist
-                console.log(idx);
                 if (idx === null) {
                     //Retrieve Route
                     var vwData = route.validateView(nav.state);

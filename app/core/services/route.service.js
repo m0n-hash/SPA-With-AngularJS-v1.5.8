@@ -25,11 +25,17 @@
                             controller: 'CustomerCtrl',
                             controllerAs: 'cc'
                         };
-                    case "#/staff/calendar":
+                    case "#/user/calendar":
                         return {
-                            templateUrl: 'view/dashboard/staff.calendar.html',
-                            controller: 'StaffCtrl',
+                            templateUrl: 'view/dashboard/user.calendar.html',
+                            controller: 'UserCtrl',
                             controllerAs: 'sc'
+                        };
+                        case "#/hr/staff/setup":
+                        return{
+                            templateUrl:'view/hr/user.setup.html',
+                            controller:'UserCtrl',
+                            controllerAs:'uc'
                         };
                     default:{
                         return {

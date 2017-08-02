@@ -1,6 +1,6 @@
 angular.module('SundewApp.Controllers').controller('CustomerPopupCtrl', [
-    '$scope', '$mdDialog', 'structure', 'status', 'event', 'customer', 'store', 'general', 'progress', 'http', 'config',
-    function ($scope, $mdDialog, structure, status, event, customer, store, general, progress, http, config) {
+    '$scope', '$mdDialog', 'structure', 'status', 'event', 'customer', 'store', 'general', 'http', 'config',
+    function ($scope, $mdDialog, structure, status, event, customer, store, general,  http, config) {
         var self = this;
         self.structure = structure;
         self.status = status;
