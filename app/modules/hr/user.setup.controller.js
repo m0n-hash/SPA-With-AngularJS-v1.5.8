@@ -62,7 +62,7 @@
             self.paginate = function (page) {
                 //TODO: Start Progress
                 //$scope.$parent.progress(true);
-                http.PAGINATE(config.API_URL + 'user', page, self.pageSize, store.HEADER(), self.paginateCallback, self.err_callback);
+                http.PAGINATE(config.API_URL + 'users', page, self.pageSize, store.HEADER(), self.paginateCallback, self.err_callback);
             };
 
             self.isTableReady = false;
@@ -78,6 +78,7 @@
             };
 
             self.paginateCallback = function (response) {
+                console.log("paginate->");
                 console.log(response);
                 self.users = [];
                 self.pageCount = response.data.content.page_count;
@@ -93,7 +94,6 @@
 
             /*Init*/
             self.init = function () {
-                console.log(store.AUTHORIZE());
                 self.set_pdata();
                 //TODO: Start Progress
                 //$scope.$parent.progress(true);
@@ -111,9 +111,6 @@
                     if (value.request_name !== "password")                        
                         self.columns.push(value);
                 });
-                console.log(self.keys);
-                console.log(self.columns);
-                console.log(self.structure);
             };
 
             self.err_callback = function (response) {

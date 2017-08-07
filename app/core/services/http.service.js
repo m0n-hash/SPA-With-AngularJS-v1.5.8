@@ -97,6 +97,8 @@
         };
 
         hs.PAGINATE = function (url, page, pageSize, headers, callback, errcallback) {
+            console.log(url + "?page=" + page + "&size=" + pageSize);
+            console.log(headers);
             $http({
                 method: "GET",
                 url: url + "?page=" + page + "&size=" + pageSize,
