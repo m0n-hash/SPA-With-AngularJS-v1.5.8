@@ -17,7 +17,7 @@
         <md-dialog-content>
             <div>
                 <div style="padding:10px 0px 0px 35px" layout="row" layout-wrap flex>
-                    <div flex="50" ng-repeat="item in tc.columns">
+                    <div ng-show="tc.isShow(item)" flex="50" ng-repeat="item in tc.columns">
                         <md-checkbox class="md-primary" ng-checked="tc.exists(item, tc.selected)" ng-click="tc.toggle(item, tc.selected)">
                             {{ item.label }}
                         </md-checkbox>

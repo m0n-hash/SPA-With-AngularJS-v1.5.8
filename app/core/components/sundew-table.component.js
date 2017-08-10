@@ -20,7 +20,7 @@ angular.module('common.components').controller('TableCtrl', [
             //Initialize Sundew Table Visible Columns
             if (!self.showColumns)
                 self.showColumns = self.columns;
-        }
+        };
 
         self.showDialog = function (ev) {
             $mdDialog.show({
@@ -43,7 +43,7 @@ angular.module('common.components').controller('TableCtrl', [
                 }, function () {
                     $scope.status = 'You cancelled the dialog.';
                 });
-        }
+        };
 
         self.getFilters = function () {
             if (self.filterText) {
@@ -51,7 +51,7 @@ angular.module('common.components').controller('TableCtrl', [
             } else {
                 return self.data;
             }
-        }
+        };
 
         //Initialize Columns And Add selected columns
         self.setShowColumns = function (columns) {
@@ -59,18 +59,21 @@ angular.module('common.components').controller('TableCtrl', [
             angular.forEach(columns, function (row, key) {
                 self.showColumns.push(row);
             });
-        }
+        };
 
         self.isShow = function (col) {
+            if (col.is_hide_in_grid)
+                return false;
+
             return self.showColumns.indexOf(col) > -1;
-        }
+        };
 
         self.isCenter = function (col) {
             if (col.request_name == "id")
                 return "text-align:center";
             else
                 return "";
-        }
+        };
 
         self.page_change = function (page) {
             if (general.isNumber(page)) {
@@ -81,19 +84,19 @@ angular.module('common.components').controller('TableCtrl', [
             } else {
                 alert('Invalid Page Number!');
             }
-        }
+        };
 
         self.prev = function () {
             self.currentPage = self.pPrev({
                 ps: self.pData.pageSize
             });
-        }
+        };
 
         self.next = function () {
             self.currentPage = self.pNext({
                 ps: self.pData.pageSize
             });
-        }
+        };
 
         self.crud = function (e, status) {
             var msg = "";
@@ -121,7 +124,7 @@ angular.module('common.components').controller('TableCtrl', [
                 row: data,
                 type: status
             });
-        }
+        };
 
         self.check_changed = function (data) {
             if (!data.isChecked) {
@@ -143,14 +146,14 @@ angular.module('common.components').controller('TableCtrl', [
                     self.data[idx].isChecked = false;
                 }
             });
-        }
+        };
 
         self.td_val = function (data, col) {
             if (col.type == "Date") {
-                return general.formatDate(new Date(data[col.request_name]));
+                return general.formatDate(new Date(data[col.name]));
             } else
-                return data[col.request_name];
-        }
+                return data[col.name];
+        };
 
         self.init();
     }

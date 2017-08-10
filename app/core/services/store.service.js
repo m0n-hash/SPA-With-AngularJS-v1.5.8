@@ -10,6 +10,8 @@
             //TODO: Cookie To store User Data For Log in and Create Authorization Token
             xheaders['Authorization'] = self.AUTHORIZE();
             xheaders['Access-Control-Allow-Credentials'] = true;
+            xheaders['Cache-Control'] = 'no-cache';
+            xheaders['Pragma'] = 'no-cache';
 
             return xheaders;
         };

@@ -47,7 +47,7 @@ angular.module('SundewApp.Controllers').controller('CustomerPopupCtrl', [
                 self.customer.registration_date = new Date();
 
             self.setTitle();
-        }
+        };
 
         self.setTitle = function () {
             switch (status) {
@@ -58,19 +58,19 @@ angular.module('SundewApp.Controllers').controller('CustomerPopupCtrl', [
                     self.title = "Edit";
                     break;
             }
-        }
+        };
 
         self.isIdNText = function (name, type) {
             return name != "id" && type == "String";
-        }
+        };
 
         self.isIdNDate = function (name, type) {
             return name != "id" && type == "Date";
-        }
+        };
 
         self.cancel = function () {
             $mdDialog.cancel();
-        }
+        };
 
         self.edit_callback = function (response) {
             if (response.data.code == 202) {
@@ -83,7 +83,7 @@ angular.module('SundewApp.Controllers').controller('CustomerPopupCtrl', [
                 general.error("Internal Server Error!");
 
             progress(false);
-        }
+        };
 
         self.insert_callback = function (response) {
             if (response.data.code == 201) {
@@ -129,7 +129,7 @@ angular.module('SundewApp.Controllers').controller('CustomerPopupCtrl', [
             };
 
             return cus;
-        }
+        };
 
         self.init();
     }

@@ -1,0 +1,37 @@
+<form ng-cloak name="roleForm">
+    <!--CRUD Here TODO:objectlist-->
+    <div flex layout="column">
+        <div style="padding:10px 35px 0px 35px" layout-gt-xs="row" ng-repeat="st in rc.structure">
+
+            <md-input-container ng-if="rc.isIdNText(st.name, st['@type'])" class="md-block" flex-gt-xs>
+                <label>{{st.name}}</label>
+                <md-icon md-font-icon="material-icons" md-colors="{color:'{{rc.icons[st.order_index].color}}'}">{{rc.icons[st.order_index].icon}}</md-icon>
+                <input ng-attr-type="{{st.input_type}}" ng-attr-style="{{rc.input_height(st.input_type)}}" ng-model="rc.role[st.name]" ng-attr-name="{{'txt'+st.name}}"
+                    minlength="1" md-maxlength="{{st.length}}" required/>
+                <div ng-messages="roleForm['txt'+st.name].$error">
+                    <div ng-message-exp="['required', 'minlength', 'maxlength']">
+                        Invalid {{st.name}}.
+                    </div>
+                </div>
+            </md-input-container>
+
+        </div>
+        <div layout-gt-xs="row" layout-align="end center">
+            <md-button ng-disabled="rc.isDisabled(roleForm.$invalid)" class="md-accent md-raised btn-vw" ng-click="rc._save()">
+                <md-icon md-menu-origin="" md-font-icon="material-icons">save</md-icon>
+                Save
+            </md-button>
+        </div>
+    </div>
+
+    <!--Roles List-->
+    <div flex layout="row" class="layout-fill-half table-sp">
+        <div flex="100">
+            <div ng-if="rc.isTableReady">
+                <sd-table columns="rc.columns" data="rc.roles" p-load="rc.loadPage(page,ps)" p-next="rc.next(ps)" p-prev="rc.prev(ps)" p-reload="rc.reload(ps)"
+                    p-data="rc.pdata" p-crud="rc.showDialog(ev, row, type)"></sd-table>
+            </div>
+        </div>
+    </div>
+
+</form>

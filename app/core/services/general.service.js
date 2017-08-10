@@ -154,6 +154,23 @@
                 return input;
             };
 
+            self.whInput = function (name, type, icase) {
+                if (name == "id") return false;
+                if (icase == "I")
+                    return "<input type='text' value='" + name + "'/>";
+                else
+                    return "<button>" + name + "</button>";
+                
+                //TODO: Return Respective Elements 
+                /*
+                switch (icase) {
+                    case "S":
+                        return type == "String";
+                    case "D":
+                        return type == "Date";
+                }*/
+            };
+
             return this;
         }
     ]);

@@ -26,11 +26,10 @@
             }).then(function successCallback(response) {
                 /*Status 200 if Successfully Select*/
                 if (callback) {
-                    callback(response)
+                    callback(response);
                 }
             }, function errorCallback(response) {
                 //TODO: Error Handling 
-                console.log(response);
                 if (errcallback)
                     errcallback(response);
             });
@@ -57,7 +56,6 @@
                     callback(response);
             }, function errorCallback(response) {
                 //TODO: Error Handling 
-                console.log(response);
                 if (errcallback)
                     errcallback(response);
             });
@@ -74,9 +72,8 @@
                     callback(response);
             }, function errorCallback(response) {
                 //TODO: Error Handling 
-                console.log(response);
-                if (errorCallback)
-                    errorCallback(response);
+                if (errcallback)
+                    errcallback(response);
             });
         };
 
@@ -90,15 +87,12 @@
                 if (callback)
                     callback(response);
             }, function errorCallback(response) {
-                console.log(response);
                 if (errcallback)
                     errcallback(response);
             });
         };
 
         hs.PAGINATE = function (url, page, pageSize, headers, callback, errcallback) {
-            console.log(url + "?page=" + page + "&size=" + pageSize);
-            console.log(headers);
             $http({
                 method: "GET",
                 url: url + "?page=" + page + "&size=" + pageSize,
@@ -107,7 +101,6 @@
                 if (callback)
                     callback(response);
             }, function errorCallback(response) {
-                console.log(response);
                 if (errcallback)
                     errcallback(response);
             });
@@ -118,8 +111,8 @@
                     transformRequest: angular.identity,
                     headers: headers,
                     onProgress: function (event) {
-                        console.log(event);
-                        if (event.total != 0)
+                        
+                        if (event.total !== 0)
                             console.log("loaded " + ((event.loaded / event.total) * 100) + "%");
                         else
                             console.log("loaded 100%");

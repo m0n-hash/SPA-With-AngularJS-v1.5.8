@@ -20,6 +20,7 @@ body {
     border-right: 1px solid rgba(0, 0, 0, 0.12);
 }
 
+
 /*Navigation Menu*/
 
 .navi-menu {
@@ -326,15 +327,27 @@ menu-link>a>md-icon {
 
 
 /*Menu Tab Control*/
-
-#menu-tab {
+.sd-tab-noheader {
     padding: 0px;
 }
 
-#menu-tab>md-tabs-wrapper {
+.sd-tab-noheader>md-tabs-wrapper {
     visibility: hidden;
     height: 0px;
 }
 
-
 /*Menu Tab Control*/
+
+.btn-vw {
+    margin-right: 40px;
+}
+
+.table-sp {
+    margin-top: 20px;
+}
+
+.layout-fill-half {
+    width: 100%;
+    min-height: 50%;
+    height: 50%;
+}

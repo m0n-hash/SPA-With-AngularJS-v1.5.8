@@ -9,9 +9,9 @@
                     case "#/":
                         //TODO: To Change Root Url To someting 
                         return {
-                            templateUrl:'view/dashboard.html',
-                            controller:'DashboardCtrl',
-                            controllerAs:'sample'
+                            templateUrl: 'view/dashboard.html',
+                            controller: 'DashboardCtrl',
+                            controllerAs: 'sample'
                         };
                     case "#/admin/dashboard":
                         return {
@@ -31,17 +31,24 @@
                             controller: 'UserCtrl',
                             controllerAs: 'sc'
                         };
-                        case "#/hr/staff/setup":
-                        return{
-                            templateUrl:'view/hr/user.setup.html',
-                            controller:'UserCtrl',
-                            controllerAs:'uc'
-                        };
-                    default:{
+                    case "#/hr/staff/setup":
                         return {
-                            //TODO: Page not found
+                            templateUrl: 'view/hr/user.setup.html',
+                            controller: 'UserCtrl',
+                            controllerAs: 'uc'
                         };
-                    }
+                    case "#/hr/role/setup":
+                        return {
+                            templateUrl: 'view/hr/role.setup.html',
+                            controller: 'RoleCtrl',
+                            controllerAs: 'rc'
+                        };
+                    default:
+                        {
+                            return {
+                                //TODO: Page not found
+                            };
+                        }
                 }
             }
         };

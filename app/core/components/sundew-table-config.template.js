@@ -10,7 +10,11 @@ angular.module('common.components').controller('TableConfigCtrl', [
             angular.forEach(self.showColumns, function (row, key) {
                 self.selected.push(row);
             });
-        }
+        };
+
+        self.isShow = function (column) {
+            return !column.is_hide_in_grid;
+        };
 
         self.selected = [];
 
@@ -34,15 +38,15 @@ angular.module('common.components').controller('TableConfigCtrl', [
                     self.selected.push(row);
                 });
             }
-        }
+        };
 
         self.cancel = function () {
             $mdDialog.cancel();
-        }
+        };
 
         self.answer = function () {
             $mdDialog.hide(self.selected);
-        }
+        };
 
         self.init();
     }

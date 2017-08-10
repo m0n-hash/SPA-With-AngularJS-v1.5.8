@@ -21,16 +21,18 @@
 
         self.success_callback = function (response) {
             if (response.data.code == 200) {
+                console.log(response);
+
                 var content = response.data.content;
+
                 store.setUser({
-                    _ccode: content.country_code,
                     _display_n: content.display_name,
                     _email: content.email,
                     _uid: content.id
                 });
 
                 store.setAccessToken(content.current_token);
-
+                
                 if (self.scb !== null)
                     self.scb(response);
             }

@@ -7,23 +7,23 @@
             name: "Dashboard",
             icon_mi: "extension",
             pages: [{
-                name:"Sample",
-                icon_mi:"beach_access",
-                type:"toggle",
-                separator:false,
-                pages:[{
-                    name:"Customer",
-                    state:"#/admin/customer",
-                    icon_mi:"wc",
-                    type:"link",
-                    separator:true
-                },{
-                    name:"Dashboard",
-                    state:"#/admin/dashboard",
-                    icon_mi:"dashboard",
-                    separator:false
+                name: "Sample",
+                icon_mi: "beach_access",
+                type: "toggle",
+                separator: false,
+                pages: [{
+                    name: "Customer",
+                    state: "#/admin/customer",
+                    icon_mi: "wc",
+                    type: "link",
+                    separator: true
+                }, {
+                    name: "Dashboard",
+                    state: "#/admin/dashboard",
+                    icon_mi: "dashboard",
+                    separator: false
                 }]
-            },{
+            }, {
                 name: "User Home",
                 icon_mi: "home",
                 type: "toggle",
@@ -78,25 +78,30 @@
             name: "Human Resource",
             icon_mi: "work",
             pages: [{
-                name:"HR Setup",
-                icon_mi:"assignment_ind",
-                type:"toggle",
-                separator:false,
-                pages:[{
-                    name:"Position",
-                    state:"#/hr/position",
-                    icon_mi:"dashboard",
-                    separator:false
-                },{
-                    name:"Department",
-                    state:"#/hr/department",
-                    icon_mi:"assessment",
-                    separator:false
-                },{
-                    name:"Staff Registration",
-                    state:"#/hr/staff/setup",
-                    icon_mi:"person",
-                    separator:false
+                name: "HR Setup",
+                icon_mi: "assignment_ind",
+                type: "toggle",
+                separator: false,
+                pages: [{
+                    name: "Position",
+                    state: "#/hr/position",
+                    icon_mi: "dashboard",
+                    separator: false
+                }, {
+                    name: "Department",
+                    state: "#/hr/department",
+                    icon_mi: "assessment",
+                    separator: false
+                }, {
+                    name: "Staff Registration",
+                    state: "#/hr/staff/setup",
+                    icon_mi: "person",
+                    separator: false
+                }, {
+                    name: "Role Setup",
+                    state: '#/hr/role/setup',
+                    icon_mi: "equalizer",
+                    separator: false
                 }]
             }]
         };
