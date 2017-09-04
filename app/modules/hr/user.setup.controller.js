@@ -110,6 +110,8 @@
                     self.keys.push(value.request_name);
                     if (value.request_name !== "password")
                         self.columns.push(value);
+                    console.log(value.name);
+                    console.log(value.input_type);
                 });
                 console.log(self.columns);
             };

@@ -13,15 +13,18 @@
                     //Result file data
                     var reader = new FileReader();
                     reader.onload = function (loadEvent) {
-                        scope.$apply(function () {
-                            /*
-                            scope.sdFileModel.data = loadEvent.target.result;
+                        
+                        if (!scope.$$phase) {
+                            scope.$apply(function () {
+                                /*
+                                scope.sdFileModel.data = loadEvent.target.result;
 
-                            scope.sdFileModel.json = changeEvent.target.files[0];
-                            */
-                            scope.sdFileModel.data = element[0].files[0];
-                        });
+                                scope.sdFileModel.json = changeEvent.target.files[0];
+                                */
 
+                                scope.sdFileModel.data = element[0].files[0];
+                            });
+                        }
                         if (scope.sdFileChanged)
                             scope.sdFileChanged();
                     }

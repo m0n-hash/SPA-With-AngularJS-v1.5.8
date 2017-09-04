@@ -17,12 +17,15 @@
 
     angular.module('common.services').factory('http', ['$http', function ($http) {
         var hs = this;
+        //Time Out For Http Request Fail after 60s 
+        hs.timeout = 6000;
 
         hs.GET = function (url, headers, callback, errcallback) {
             $http({
                 method: "GET",
                 url: url,
                 headers: headers,
+                timeout: hs.timeout
             }).then(function successCallback(response) {
                 /*Status 200 if Successfully Select*/
                 if (callback) {
@@ -39,7 +42,8 @@
             return $http({
                 method: "GET",
                 url: url,
-                headers: headers
+                headers: headers,
+                timeout: hs.timeout
             }).then(function (response) {
                 return response;
             });
@@ -50,7 +54,8 @@
                 method: "POST",
                 url: url,
                 headers: headers,
-                data: jsondata
+                data: jsondata,
+                timeout: hs.timeout
             }).then(function successCallback(response) {
                 if (callback)
                     callback(response);
@@ -66,7 +71,8 @@
                 method: "PUT",
                 url: url,
                 headers: headers,
-                data: jsondata
+                data: jsondata,
+                timeout: hs.timeout
             }).then(function successCallback(response) {
                 if (callback)
                     callback(response);
@@ -78,11 +84,12 @@
         };
 
         hs.DELETE = function (url, headers, callback, errcallback) {
-            
+
             $http({
                 method: "DELETE",
                 url: url,
-                headers: headers
+                headers: headers,
+                timeout: hs.timeout
             }).then(function successCallback(response) {
                 if (callback)
                     callback(response);
@@ -97,6 +104,7 @@
                 method: "GET",
                 url: url + "?page=" + page + "&size=" + pageSize,
                 headers: headers,
+                timeout: hs.timeout
             }).then(function successCallback(response) {
                 if (callback)
                     callback(response);
@@ -110,8 +118,10 @@
             $http.post(url, formData, {
                     transformRequest: angular.identity,
                     headers: headers,
+                    withCredentials : false,
+                    timeout: hs.timeout,
                     onProgress: function (event) {
-                        
+
                         if (event.total !== 0)
                             console.log("loaded " + ((event.loaded / event.total) * 100) + "%");
                         else
@@ -127,7 +137,7 @@
                         errcallback(response);
                 });
         };
-
+        
         return hs;
     }]);
 })();

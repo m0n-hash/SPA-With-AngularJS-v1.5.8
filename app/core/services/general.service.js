@@ -1,8 +1,8 @@
 (function () {
     'use strict';
 
-    angular.module('common.services').factory('general', ['$window', '$mdToast', '$mdDialog',
-        function ($window, $mdToast, $mdDialog) {
+    angular.module('common.services').factory('general', ['$window', '$mdToast', '$mdDialog', '$base64',
+        function ($window, $mdToast, $mdDialog, $base64) {
             var self = this;
 
             self.isNumber = function (n) {
@@ -154,21 +154,17 @@
                 return input;
             };
 
-            self.whInput = function (name, type, icase) {
-                if (name == "id") return false;
-                if (icase == "I")
-                    return "<input type='text' value='" + name + "'/>";
-                else
-                    return "<button>" + name + "</button>";
-                
-                //TODO: Return Respective Elements 
-                /*
-                switch (icase) {
-                    case "S":
-                        return type == "String";
-                    case "D":
-                        return type == "Date";
-                }*/
+            self._mimeEnc=function(str){
+                console.log(mimelib.foldLine(str, 76));
+            };
+
+            self._enc = function (json) {
+                return $base64.encode(JSON.stringify(json));
+            };
+
+            self._dec = function (enc_str) {
+                var str = $base64.decode(enc_str);
+                return eval("(" + str + ")");
             };
 
             return this;

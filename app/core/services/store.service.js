@@ -16,6 +16,14 @@
             return xheaders;
         };
 
+        self.IMGHEADER = function () {
+            var xheaders = {};
+            xheaders['Content-Type'] = "application/json";
+            //TODO: Cookie To store User Data For Log in and Create Authorization Token
+            xheaders['Authorization'] = self.AUTHORIZE();
+            return xheaders;
+        }
+
         //multipart/form-data <or> application/x-www-form-urlencoded
         self.FD_HEADER = function () {
             var xheaders = {};

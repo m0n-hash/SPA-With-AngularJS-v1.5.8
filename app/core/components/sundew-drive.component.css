@@ -9,15 +9,19 @@
 }
 
 .card-container {
-    width: 200px;
-    height: 150px;
-    margin-left: 20px;
-    margin-bottom: 20px
+    width: 140px;
+    /*200px;*/
+    height: 100px;
+    /*150px;*/
+    margin-left: 15px;
+    /*20px;*/
+    margin-bottom: 15px;
+    /*20px*/
 }
 
 .card-preview {
     width: auto;
-    height: 113px;
+    height: 66px;
 }
 
 .card-detail {
@@ -35,14 +39,99 @@
     padding: 5px 0px 5px 0px;
 }
 
-div:focus{
+div:focus {
     background: #4285f4;
 }
 
-.preview-icon{
-    font-size:5em;
+.preview-icon {
+    font-size: 4em;
+    /*5em;*/
 }
 
-.detail-ico{
-    font-size:1em;
+.detail-ico {
+    font-size: 1em;
+}
+
+.groupX {
+    margin: 6px 1px;
+}
+
+
+/*For Context Menu*/
+
+
+/* Menu */
+
+ul.menu {
+    position: absolute;
+    list-style-type: none;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+    width: 150px;
+    border: 1px solid rgba(0, 0, 0, .15);
+    top: 0;
+    left: 0;
+}
+
+ul.menu li.title {
+    padding: 5px 10px;
+    font-size: 11px;
+    color: rgba(0, 0, 0, .5);
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+    background: linear-gradient(to bottom, #ededed 0%, #dedede 100%);
+}
+
+ul.menu li {
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+    margin: /*0;*/
+    0 0 0 -40px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color .25s;
+    font-size: 12px;
+    font-family: Lato, Arial, Tahoma Helvetica, sans-serif;
+    overflow: hidden;
+    padding: 2px;
+}
+
+ul.menu li md-icon {
+    padding-left: 8px
+}
+
+ul.menu li img {
+    float: left;
+    overflow: hidden;
+    width: 20px;
+    opacity: .5;
+    margin: 6px;
+    transition: opacity .25s;
+}
+
+ul.menu li:last-of-type {
+    border-bottom: 0;
+}
+
+ul.menu li a {
+    padding: 5px 12px 0 43px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*color: dodgerblue;*/
+    transition: color .25s;
+    text-decoration: none;
+    font-family: Lato, Arial, Tahoma Helvetica, sans-serif;
+}
+
+ul.menu li:hover {
+    background: #F3F3F3;
+}
+
+ul.menu li:hover img {
+    opacity: 1;
+}
+
+.list-icon {
+    font-size: 38px;
 }

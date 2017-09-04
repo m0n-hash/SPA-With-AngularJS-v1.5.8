@@ -32,7 +32,7 @@
                 });
 
                 store.setAccessToken(content.current_token);
-                
+
                 if (self.scb !== null)
                     self.scb(response);
             }

@@ -57,7 +57,7 @@
                 var xheaders = {};
                 xheaders["Content-Type"] = "application/json";
 
-                auth.logIn(data, ac.success_callback, ac.error_callback);
+                auth.logIn(data, ac.success_callback);
             };
 
             ac.success_callback = function (response) {

@@ -8,48 +8,35 @@
             <!--{{(tc.filterData = (tc.data | filter: tc.filterText))}}-->
         </div>
 
-        <div flex layout="row">
-            <span flex="40"></span>
-
-            <div style="margin-right:10px;" flex>
-                <section layout="row" layout-align="center center">
-
-                    <md-button flex class="groupX left " aria-label="Setting" type="button" ng-click="dc.loadFile()">
-                        <md-tooltip md-direction="bottom">Add</md-tooltip>
-                        <md-icon md-menu-origin="" md-font-icon="material-icons">add</md-icon>
-                    </md-button>
-                    <md-button flex class="groupX middle " aria-label="Setting" type="button" ng-click="dc.fileChanged()">
-                        <md-tooltip md-direction="bottom">Delete</md-tooltip>
-                        <md-icon md-menu-origin="" md-font-icon="material-icons">delete</md-icon>
-                    </md-button>
-                    <md-button flex class="groupX middle " aria-label="Setting" type="button" ng-click="">
-                        <md-tooltip md-direction="bottom">Arrange View</md-tooltip>
-                        <md-icon md-menu-origin="" md-font-icon="material-icons">view_compact</md-icon>
-                    </md-button>
-                    <md-button flex class="groupX middle " aria-label="Setting" type="button" ng-click="">
-                        <md-tooltip md-direction="bottom">Details</md-tooltip>
-                        <md-icon md-menu-origin="" md-font-icon="material-icons">error</md-icon>
-                    </md-button>
-
+        <div flex layout="row" layout-align="end center">
+            <section layout="row" layout-align="center center">
+                <md-button flex class="groupX left" aria-label="Setting" type="button" ng-click="dc.loadFile()">
+                    <md-tooltip md-direction="bottom">Add</md-tooltip>
+                    <md-icon md-menu-origin="" md-font-icon="material-icons">add</md-icon>
+                </md-button>
+                <md-button flex class="groupX middle " aria-label="Setting" type="button" ng-click="dc.reArrange()">
+                    <md-tooltip md-direction="bottom">Arrange View</md-tooltip>
+                    <md-icon md-menu-origin="" md-font-icon="material-icons">view_compact</md-icon>
+                </md-button>
+                <!--
                     <md-button flex class="groupX right md-primary" ng-click="tc.showDialog($event)" aria-label="Setting" type="button">
                         <md-tooltip md-direction="bottom">Settings</md-tooltip>
                         <md-icon md-menu-origin="" md-font-icon="material-icons">settings</md-icon>
                     </md-button>
-                </section>
-            </div>
+                -->
+            </section>
         </div>
     </div>
 
-    <div class="sd-drive-container" md-colors="{background: 'grey-50'}">
+    <div ng-cloak class="sd-drive-container" md-colors="{background: 'grey-50'}">
         <input type="file" ng-hide="true" sd-file-model="dc.filesToUpload" sd-file-changed="dc.fileChanged()" id="uploadFile" />
 
-        <div style="margin-top:10px" layout="row" layout-wrap>
-            <div class="card-container" md-whiteframe md-colors="{background: 'grey-50'}" ng-repeat="f in dc.files" data-context-event="contextmenu"
-                data-context-menu="app/core/components/sundew-drive.contextmenu.html">
-                <div class="card-preview" layout="row" layout-align="center center" data-context-menu="sundew-drive.contextmenu.html">
+        <div ng-cloak ng-if="dc.rearrange" style="margin-top:10px" layout="row" layout-wrap>
+            <div class="card-container" md-whiteframe md-colors="{background: 'grey-50'}" ng-repeat="f in dc.files">
+                <div class="card-preview" layout="row" layout-align="center center">
                     <md-icon class="preview-icon" md-colors="{color:'{{f.fileIc.color}}'}" md-font-icon="material-icons">{{f.fileIc.ico}}</md-icon>
                 </div>
-                <div class="card-detail" tabindex="{{f.id}}">
+                <div class="card-detail" tabindex="{{f.id}}" data-context-event="contextmenu" data-context-menu="app/core/components/sundew-drive.contextmenu.html">
                     <!--<md-tooltip md-direction="bottom">
                         Name : {{f.name+'.'+f.extension}}
                         <br> 
@@ -66,5 +53,21 @@
             </div>
         </div>
 
+        <div ng-cloak ng-if="!dc.rearrange" style="margin-top:10px" layout="column">
+            <md-content ng-if="!dc.rearrange">
+                <md-list flex>
+                    <div ng-repeat="f in dc.files">
+                        <md-list-item class="md-2-line" ng-click="null" data-context-event="contextmenu" data-context-menu="app/core/components/sundew-drive.contextmenu.html">
+                            <md-icon class="list-icon" md-colors="{color:'{{f.fileIc.color}}'}" md-font-icon="material-icons">{{f.fileIc.ico}}</md-icon>
+                            <div class="md-list-item-text" layout="column">
+                                <p>{{f.name}}.{{f.extension}}</p>
+                                <p>{{f.size}} ({{f.type}})</p>
+                            </div>
+                        </md-list-item>
+                        <md-divider></md-divider>
+                    </div>
+                </md-list>
+            </md-content>
+        </div>
     </div>
 </div>

@@ -1,0 +1,19 @@
+id			text		int	hide false
+email			email		String	hide false
+display_name		text 		String 	hide false
+password			password		String 	hide false
+online 			checkbox		boolean	hide false
+facebook_id		objectlist		String	hide true
+profile_image		image		FileEntity	hide false
+roles			objectlist		set	hide true
+status			radio		char	hide false
+extra			map		Map	hide false <currently hide extra, need to confirm>
+
+text, 
+email, 
+password, 
+checkbox, 
+objectlist, 
+image, 
+radio, 
+<<map>>

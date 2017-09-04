@@ -38,4 +38,11 @@ js/ng-contextmenu.min.js
 js/ngContextMenu.js
 js/ngscrollbar.min.js
 js/underscore-min.js
+js/angular-bind-html-compile.min.js
+js/require.js
+js/addressparser.js
+js/encoding.js
+js/iconv-loader.js
+js/mimelib.js
+js/angular-download.js
 app/core/tests/test.module.js

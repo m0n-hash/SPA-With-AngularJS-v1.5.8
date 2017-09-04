@@ -88,7 +88,7 @@
                 angular.forEach(response.data.content.data, function (row, key) {
                     self.roles.push(row);
                 });
-
+                console.log(self.roles);
                 //TODO: Stop Progress
                 //$scope.$parent.progress(false);
             };
@@ -146,7 +146,7 @@
                         "Delete", "Cancel", self.confirmFunc, null, ev);
                     return;
                 }
-                
+
                 self.disabled = false;
 
                 if (type == "I") {
@@ -253,7 +253,7 @@
                 var ro = self.collectRole();
                 if (self.role.id) {
                     ro.id = self.role.id;
-                    
+
                     http.PUT(config.API_URL + 'roles/' + self.role.id, store.HEADER(), ro, self.edit_callback, self.error_callback);
                 } else {
                     http.POST(config.API_URL + 'roles', store.HEADER(), ro, self.insert_callback, self.error_callback);

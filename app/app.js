@@ -1,7 +1,9 @@
 (function () {
+    //var mimelib = require("mimelib");
+
     var app = angular.module('SundewApp', ["ngRoute", "ngMaterial", "material.components.eventCalendar",
         "ngMessages", "ngAnimate", "ngAria", "angularMoment", "base64", "ngContextMenu", "angular-clipboard",
-        "widget.scrollbar",
+        "widget.scrollbar", "angular-bind-html-compile", "download",
         "ngCookies", "mdDataTable",
         "SundewApp.Controllers"
     ]);
@@ -50,17 +52,17 @@
             return doc.label || doc.name;
         };
     });
-/*
-    app.run(function ($window, auth) {
-        if (auth.isLoggedIn()) {
-            return;
-        }
+    /*
+        app.run(function ($window, auth) {
+            if (auth.isLoggedIn()) {
+                return;
+            }
 
-        //TODO: Redirect to Login page
-        //$window.location = "#";
+            //TODO: Redirect to Login page
+            //$window.location = "#";
 
-        //Make sure bootstrap process is stopped
-        //throw new Error('Access denied');
-    });
-*/
+            //Make sure bootstrap process is stopped
+            //throw new Error('Access denied');
+        });
+    */
 })();
