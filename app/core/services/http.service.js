@@ -20,7 +20,7 @@
         //Time Out For Http Request Fail after 60s 
         hs.timeout = 6000;
 
-        hs.GET = function (url, headers, callback, errcallback) {
+        hs.GET = function (url, headers, callback, errcallback, extra) {
             $http({
                 method: "GET",
                 url: url,
@@ -29,7 +29,7 @@
             }).then(function successCallback(response) {
                 /*Status 200 if Successfully Select*/
                 if (callback) {
-                    callback(response);
+                    callback(response, extra);
                 }
             }, function errorCallback(response) {
                 //TODO: Error Handling 
@@ -118,7 +118,7 @@
             $http.post(url, formData, {
                     transformRequest: angular.identity,
                     headers: headers,
-                    withCredentials : false,
+                    withCredentials: false,
                     timeout: hs.timeout,
                     onProgress: function (event) {
 
@@ -137,7 +137,7 @@
                         errcallback(response);
                 });
         };
-        
+
         return hs;
     }]);
 })();

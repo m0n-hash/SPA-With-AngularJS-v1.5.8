@@ -1,0 +1,14 @@
+<div class="default-card-container" md-whiteframe md-colors="{background: 'grey-50'}">
+    <div class="default-card-preview" layout="row" layout-align="center center">
+        <img class="img-container" ng-src="{{ic.href}}" alt="Sundew Myanmar" width="100" height="100">
+        <md-button ng-hide="ic.isHide()" class="img-button" ng-click="ic.remove()">
+            <md-tooltip md-direction="top">Remove</md-tooltip>
+            <md-icon md-font-icon="material-icons" aria-label="Close dialog">highlight_off</md-icon>
+        </md-button>
+    </div>
+    <div class="card-detail" ng-click="ic.open_dialog()" tabindex="1" layout="row" layout-align="center center">
+        <div class="title-wrap card-detail-item">
+            {{ic.getCaption()}}
+        </div>
+    </div>
+</div>

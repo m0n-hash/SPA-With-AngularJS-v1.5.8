@@ -4,7 +4,9 @@
         templateUrl: "app/core/components/sundew-drive.component.html",
         controller: "DriveCtrl as dc",
         bindings: {
-            pReload: '&?'
+            pReload: '&?',
+            pSelect: '=?',
+            pContext: '='
         }
     });
 })();

@@ -17,6 +17,7 @@ TODO:   Skip Is Online <To Skip in entry>
             self.event = event;
             self.title = "";
             self.user = user;
+            self.selectedTab = null;
 
             self.icons = [{}, {
                 icon: 'perm_identity',
@@ -25,59 +26,54 @@ TODO:   Skip Is Online <To Skip in entry>
 
             self.test = "";
             self.init = function () {
-                console.log('in popup');
-                console.log(structure);
-                console.log(user);
+                angular.forEach(structure, function (data, key) {
 
-                self.roles = [{
-                    id: 1,
-                    name: "CEO",
-                    description: "CEO Desc"
-                }, {
-                    id: 2,
-                    name: "Manager",
-                    description: "Manager Desc"
-                }];
-                self.multiple = "";
-
-                var result = inputc.whInput('name', 'checkbox', {
-                    color: "blue",
-                    icon: "healing",
-                    attr_style: "height:200px;",
-                    model: "urc.tmodel",
-                    model2: "tmodel2",
-                    objs: "urc.roles",
-                    objToShow: "{{item.name}}",
-                    multi: "multiple",
-                    max_len: "25",
-                    form_err: "userForm['txtname'].$error",
-                    msg_exp: "'required'"
                 });
-
-                self.test = result;
-                var myEl = angular.element('#test');
-
-                myEl.append('Hi<br/>');
-                console.log(myEl);
-                console.log('test #2');
             };
 
-            self.goto=function(navi){
+            self.goto = function (navi) {
                 //TODO: Go to role tab back and forth, and reload role selector values
-            }
+            };
 
-            self.testing = function () {
-                return self.test;
+            self.compileStruct = function (data) {
+
+                if (data.name == "id" ||
+                    data.name == "online" ||
+                    data.name == "facebook_id" ||
+                    data.name == "extra" ||
+                    data.name == "roles" ||
+                    data.name == "status") {
+                    return "";
+                }
+
+                var iconSets = inputc.whIcon(data.name);
+
+                var extra = {
+                    color: iconSets.data.color,
+                    icon: iconSets.data.icon,
+                    icon2: iconSets.data.icon2,
+                    attr_style: "",
+                    model: "urc.user." + data.name,
+                    model2: "urc.user." + data.name + "2",
+                    max_len: data.length,
+                    form_err: "userForm['txt" + data.name + "'].$error",
+                    msg_exp: "'required', 'minlength', 'maxlength'",
+                };
+
+                return inputc.whInput(data.label, data.input_type, extra);
             };
 
             self.cancel = function () {
-                console.log(self.tmodel);
                 /*
                 var myEl = angular.element(document.querySelector('#test'));
                 console.log('test #cancel1');
                 console.log(myEl);
                 */
                 $mdDialog.cancel();
+            };
+
+            self.answer = function () {
+                console.log(self.user);
             };
 
             self.init();

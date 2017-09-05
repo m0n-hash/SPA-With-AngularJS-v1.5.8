@@ -13,24 +13,24 @@
                     case "text":
                         result_input = general.formatString(self.input_ctn, self.input_txt);
                         result_input = general.formatString(result_input, name, extra.color, extra.icon, input, extra.attr_style, extra.model,
-                            "txt" + name, extra.max_len, extra.form_err, extra.msg_exp, name);
+                            "ip" + name, extra.max_len, extra.form_err, extra.msg_exp, name);
                         break;
                     case "email":
                         result_input = general.formatString(self.input_ctn, self.input_txt);
                         result_input = general.formatString(result_input, name, extra.color, extra.icon, input, extra.attr_style, extra.model,
-                            "txt" + name, extra.max_len, extra.form_err, extra.msg_exp + ",'pattern'", name);
+                            "ip" + name, extra.max_len, extra.form_err, extra.msg_exp + ",'pattern'", name);
                         break;
                         //compareTo for Msg Exp
                     case "password":
                         var ip1 = general.formatString(self.input_ctn, self.input_pwd1);
                         ip1 = general.formatString(ip1, name, extra.color, extra.icon, input, extra.attr_style, extra.model,
-                            "txt" + name, extra.max_len, extra.form_err, extra.msg_exp, name);
+                            "ip" + name, extra.max_len, extra.form_err, extra.msg_exp, name);
 
                         var ip2 = general.formatString(self.input_ctn, self.input_pwd2);
-                        ip2 = general.formatString(ip2, "Confirm " + name, extra.color, extra.icon, input, extra.attr_style, extra.model2,
-                            "txtconfirm" + name, extra.model, extra.max_len, extra.form_err, extra.msg_exp, "confirm " + name)
-                        console.log(ip2);
-                        result_input = ip1 + ip2;
+                        ip2 = general.formatString(ip2, "Confirm " + name, extra.color, extra.icon2, input, extra.attr_style, extra.model2,
+                            "ipconfirm" + name, extra.model, extra.max_len, extra.form_err, extra.msg_exp + ",'compareTo'", "confirm " + name);
+
+                        result_input = "<div>" + ip1 + "</div><div style='padding-top:3px'>" + ip2 + "</div>";
                         break;
                     case "checkbox":
                         result_input = general.formatString(self.input_ctn, self.input_chk);
@@ -42,6 +42,8 @@
                             extra.objs, extra.objToShow, extra.form_err, extra.msg_exp, name);
                         break;
                     case "image":
+                        result_input = general.formatString(self.input_ctn, self.input_img);
+                        result_input = general.formatString(result_input, extra.model);
                         break;
                     case "radio":
                         break;
@@ -50,9 +52,111 @@
                     default:
                         break;
                 }
-
-                return $sce.trustAsHtml(result_input);
+                //TODO: $sce.trustAsHtml(result_input); 
+                return result_input;
             };
+
+            self.icons = [{
+                    key: "name",
+                    data: {
+                        icon: 'perm_identity',
+                        color: 'green-A700',
+                    }
+                },
+                {
+                    key: "email",
+                    data: {
+                        icon: 'email',
+                        color: 'pink-A700'
+                    }
+                },
+                {
+                    key: "phone",
+                    data: {
+                        icon: 'phone',
+                        color: 'indigo-800'
+                    }
+                },
+                {
+                    key: "company",
+                    data: {
+                        icon: 'business',
+                        color: 'yellow-A700'
+                    }
+                },
+                {
+                    key: "bank",
+                    data: {
+                        icon: 'credit_card',
+                        color: 'purple-800'
+                    }
+                },
+                {
+                    key: "address",
+                    data: {
+                        icon: 'streetview',
+                        color: 'cyan-800'
+                    }
+                },
+                {
+                    key: "city",
+                    data: {
+                        icon: 'location_city',
+                        color: 'red-600'
+                    }
+                },
+                {
+                    key: "country",
+                    data: {
+                        icon: 'public',
+                        color: 'light-green-A700'
+                    }
+                },
+                {
+                    key: "remark",
+                    data: {
+                        icon: 'speaker_notes',
+                        color: 'orange-400'
+                    }
+                },
+                {
+                    key: "date",
+                    data: {
+                        icon: 'date_range',
+                        color: 'brown-600'
+                    }
+                },
+                {
+                    key: "password",
+                    data: {
+                        icon: 'vpn_key',
+                        icon2: 'done_all',
+                        color: 'blue-grey-800'
+                    }
+                }
+            ];
+
+            self.whIcon = function (name) {
+                var result = null;
+                angular.forEach(self.icons, function (data, key) {
+                    if (name.toLowerCase().includes(data.key.toLowerCase())) {
+                        result = data;
+                    }
+                });
+
+                if (result)
+                    return result;
+                else
+                    //Return Default Error icon if not set up!
+                    return {
+                        key: "ufo",
+                        data: {
+                            icon: "error",
+                            color: "red-900"
+                        }
+                    };
+            };
+
             //Input Container
             self.input_ctn = '<md-input-container class="md-block" flex-gt-xs> {0} </md-input-container>';
             //0.label, 1.color, 2.icon, 3.input_type, 4.input_height, 5.model<rpc.customer[st.request_name]>, 6.attr_name<'txt'+st.name>, 
@@ -81,6 +185,7 @@
                 '<div ng-messages="{8}"><div ng-message-exp="[{9}]">Invalid {10}.</div></div>';
             self.input_chk = "<md-checkbox md-no-ink aria-label='{0}' ng-model='{1}' class='md-primary sd-checkbox'>" +
                 "{2}</md-checkbox>";
+            self.input_img = "<sd-img img-model='{0}'></sd-img>";
             return self;
         }
     ]);

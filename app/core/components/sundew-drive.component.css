@@ -22,6 +22,7 @@
 .card-preview {
     width: auto;
     height: 66px;
+    border-bottom: 1px solid #F3EEEE;
 }
 
 .card-detail {
@@ -40,6 +41,10 @@
 }
 
 div:focus {
+    
+}
+
+.drive-active{
     background: #4285f4;
 }
 
@@ -71,6 +76,7 @@ ul.menu {
     border: 1px solid rgba(0, 0, 0, .15);
     top: 0;
     left: 0;
+    z-index: 1000;
 }
 
 ul.menu li.title {

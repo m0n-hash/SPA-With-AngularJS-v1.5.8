@@ -151,6 +151,7 @@
                 $mdDialog.show({
                         locals: {
                             structure: angular.copy(self.structure),
+                            selectedUser: angular.copy(self.selectedUser),
                             status: type,
                             event: ev,
                             user: angular.copy(row)

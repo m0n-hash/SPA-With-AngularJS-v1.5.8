@@ -1,0 +1,26 @@
+<md-dialog class="full-sc-dialog" aria-label="Show Columns" md-theme="SundewTheme">
+    <md-toolbar style="background-color:#4D3343">
+        <div class="md-toolbar-tools">
+            <legend style="padding:20px 0px 0px 20px;">
+                Sundew Drive
+            </legend>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="ddc.cancel()">
+                <md-icon md-font-icon="material-icons" aria-label="Close dialog">close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <sd-drive p-reload="ddc.load_self()" p-select="ddc.selected" p-context='false'></sd-drive>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+
+        <md-button ng-click="ddc.answer(true)" data-context-event="contextmenu" data-context-menu="app/core/components/sundew-drive.contextmenu.html">
+            Ok
+        </md-button>
+        <md-button ng-click="ddc.answer(false)" style="margin-right:20px;">
+            Cancel
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

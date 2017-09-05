@@ -7,9 +7,6 @@
             self.img = image;
             self.href = "";
             self.init = function () {
-                console.clear();
-                console.log(self.img);
-
                 var header = store.IMGHEADER();
 
                 //Currently Us Is64 To Encode From API
@@ -23,7 +20,7 @@
             };
 
             self.error_callback = function (response) {
-                console.log(response);
+                general.data_error(response);
             };
 
             self.cancel = function () {

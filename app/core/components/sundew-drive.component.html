@@ -34,9 +34,11 @@
         <div ng-cloak ng-if="dc.rearrange" style="margin-top:10px" layout="row" layout-wrap>
             <div class="card-container" md-whiteframe md-colors="{background: 'grey-50'}" ng-repeat="f in dc.files">
                 <div class="card-preview" layout="row" layout-align="center center">
-                    <md-icon class="preview-icon" md-colors="{color:'{{f.fileIc.color}}'}" md-font-icon="material-icons">{{f.fileIc.ico}}</md-icon>
+                    <!--<md-icon class="preview-icon" md-colors="{color:'{{f.fileIc.color}}'}" md-font-icon="material-icons">{{f.fileIc.ico}}</md-icon>-->
+                    <img class="img-drive" ng-src="{{dc.get_img(f.id)}}" alt="Sundew Myanmar" width="100" height="100">
                 </div>
-                <div class="card-detail" tabindex="{{f.id}}" data-context-event="contextmenu" data-context-menu="app/core/components/sundew-drive.contextmenu.html">
+                <div class="card-detail" ng-class="dc.SelectClass(f)" tabindex="{{f.id}}" ng-right-click="dc.ItemSelected(f)" ng-click="dc.ItemSelected(f)"
+                    data-context-event="contextmenu" data-context-menu="app/core/components/sundew-drive.contextmenu.html">
                     <!--<md-tooltip md-direction="bottom">
                         Name : {{f.name+'.'+f.extension}}
                         <br> 
@@ -57,7 +59,8 @@
             <md-content ng-if="!dc.rearrange">
                 <md-list flex>
                     <div ng-repeat="f in dc.files">
-                        <md-list-item class="md-2-line" ng-click="null" data-context-event="contextmenu" data-context-menu="app/core/components/sundew-drive.contextmenu.html">
+                        <md-list-item class="md-2-line" ng-class="dc.SelectClass(f)" ng-right-click="dc.ItemSelected(f)" ng-click="dc.ItemSelected(f)"
+                            data-context-event="contextmenu" data-context-menu="app/core/components/sundew-drive.contextmenu.html">
                             <md-icon class="list-icon" md-colors="{color:'{{f.fileIc.color}}'}" md-font-icon="material-icons">{{f.fileIc.ico}}</md-icon>
                             <div class="md-list-item-text" layout="column">
                                 <p>{{f.name}}.{{f.extension}}</p>

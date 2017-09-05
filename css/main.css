@@ -327,6 +327,7 @@ menu-link>a>md-icon {
 
 
 /*Menu Tab Control*/
+
 .sd-tab-noheader {
     padding: 0px;
 }
@@ -335,6 +336,7 @@ menu-link>a>md-icon {
     visibility: hidden;
     height: 0px;
 }
+
 
 /*Menu Tab Control*/
 

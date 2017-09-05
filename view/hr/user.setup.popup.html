@@ -13,71 +13,43 @@
         </md-toolbar>
 
         <md-dialog-content>
-            <div>
-                <div style="padding:10px 35px 0px 35px" layout-gt-xs="row">
-                    <md-tabs class="sd-tab-noheader" id="user-tab" md-selected="uc.selectedTab" md-border-bottom md-dynamic-height>
-                        <md-tab label="userTab">
-                            <md-content class="md-padding content-view">
-                                <div flex layout="column">
-                                    <div id="test" style="padding:10px 35px 0px 35px" layout-gt-xs="column">
-                                        <input type='text' ng-model="urc.tt1" />
-                                        <input type='text' name="conpwd" ng-model="urc.tt2" compare-to="urc.tt1" />
-                                        <div ng-messages="userForm.conpwd.$error">
-                                            <div ng-message-exp="['compareTo']">
-                                                Invalid compare.
-                                            </div>
-                                        </div>
-                                        <div bind-html-compile="urc.testing()">
+            <div layout-gt-xs="row">
+                <md-tabs flex="100" class="sd-tab-noheader" id="user-tab" md-selected="urc.selectedTab" md-border-bottom md-dynamic-height>
+                    <md-tab label="userTab">
+                        <md-content class="md-padding content-view">
+                            <div flex layout="column">
 
-                                        </div>
-                                        <md-input-container>
-                                            <label>Topping</label>
-                                            <md-icon md-font-icon="material-icons" md-colors="{color:'blue'}">healing</md-icon>
-                                            <md-select ng-model="urc.srole" {{multiple}}>
-                                                <md-optgroup label="Meats">
-                                                    <md-option ng-value="topping" ng-repeat="topping in urc.roles">{{topping.name}}</md-option>
-                                                </md-optgroup>
-                                                <md-optgroup label="Veggies">
-                                                    <md-option ng-value="topping" ng-repeat="topping in urc.roles">{{topping.name}}</md-option>
-                                                </md-optgroup>
-                                            </md-select>
-                                        </md-input-container>
-                                        <md-input-container>
-                                            
-                                            <md-checkbox md-no-ink class="sd-checkbox" aria-label="Checkbox No Ink" ng-model="data.cb5" class="md-primary">
-                                                Checkbox (md-primary): No Ink
-                                            </md-checkbox>
-                                        </md-input-container>
-                                    </div>
+                                <div bind-html-compile="urc.compileStruct(item)" compile-template ng-repeat="item in urc.structure">
 
                                 </div>
-                                <div layout="row">
-                                    <md-button ng-disabled="customerForm.$invalid" class="md-accent md-raised" ng-click="urc.answer()">
-                                        <md-icon md-menu-origin="" md-font-icon="material-icons">verified_user</md-icon>
-                                        Save
-                                    </md-button>
-                                    <md-button style="padding-right:40px" class="md-primary" ng-click="urc.cancel()">
-                                        <md-icon md-menu-origin="" md-font-icon="material-icons">verified_user</md-icon>
-                                        Cancel
-                                    </md-button>
-                                    <md-button style="padding-right:40px" class="md-primary" ng-click="urc.goto('role')">
-                                        <md-icon md-menu-origin="" md-font-icon="material-icons">verified_user</md-icon>
-                                        Role Setup
-                                    </md-button>
-                                </div>
-                            </md-content>
 
-                        </md-tab>
-                        <md-tab label="roleTab">
-                            <md-content class="md-padding content-view">
-                                <div ng-controller="RoleCtrl as rc">
-                                    <div ng-include="'role.setup.html'">
-                                    </div>
+                            </div>
+                            <div layout="row">
+                                <md-button ng-disabled="customerForm.$invalid" class="md-accent md-raised" ng-click="urc.answer()">
+                                    <md-icon md-menu-origin="" md-font-icon="material-icons">verified_user</md-icon>
+                                    Save
+                                </md-button>
+                                <md-button style="padding-right:40px" class="md-primary" ng-click="urc.cancel()">
+                                    <md-icon md-menu-origin="" md-font-icon="material-icons">verified_user</md-icon>
+                                    Cancel
+                                </md-button>
+                                <md-button style="padding-right:40px" class="md-primary" ng-click="urc.goto('role')">
+                                    <md-icon md-menu-origin="" md-font-icon="material-icons">verified_user</md-icon>
+                                    Role Setup
+                                </md-button>
+                            </div>
+                        </md-content>
+
+                    </md-tab>
+                    <md-tab label="roleTab">
+                        <md-content class="md-padding content-view">
+                            <div ng-controller="RoleCtrl as rc">
+                                <div ng-include="'role.setup.html'">
                                 </div>
-                            </md-content>
-                        </md-tab>
-                    </md-tabs>
-                </div>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
             </div>
         </md-dialog-content>
         <!--

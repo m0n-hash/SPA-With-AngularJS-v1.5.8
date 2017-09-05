@@ -107,3 +107,60 @@ md-toast {
     position: relative;
     margin-left: -45px;
 }
+
+md-dialog.md-SundewTheme-theme {
+    background: #FAFAFA;
+}
+
+.default-card-container {
+    width: 180px;
+    height: 130px;
+    margin-left: 15px;
+    /*20px;*/
+    margin-bottom: 15px;
+    /*20px*/
+}
+
+.default-card-preview {
+    width: auto;
+    height: 100px;
+    border-bottom: 1px solid #F3EEEE;
+}
+
+.img-container {
+    width: 100px;
+    height: 100px;
+    padding: 3px 0 3px 0;
+}
+
+.img-border {
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #FFF;
+    border: 1px solid #CCC;
+    position: relative;
+    display: block;
+}
+
+.img-button {
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+    width: 100px;
+    height: 100px;
+}
+
+.img-button md-icon {
+    font-size: 4em;
+}
+
+.default-card-preview:hover .img-button {
+    opacity: 0.6;
+}
+
+.img-drive {
+    width: 64px;
+    height: 64px;
+}
