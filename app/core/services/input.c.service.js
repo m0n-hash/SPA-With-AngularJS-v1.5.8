@@ -11,39 +11,39 @@
                 var result_input;
                 switch (input) {
                     case "text":
-                        result_input = general.formatString(self.input_ctn, self.input_txt);
+                        result_input = general.formatString(self.input_ctn, "", self.input_txt);
                         result_input = general.formatString(result_input, name, extra.color, extra.icon, input, extra.attr_style, extra.model,
                             "ip" + name, extra.max_len, extra.form_err, extra.msg_exp, name);
                         break;
                     case "email":
-                        result_input = general.formatString(self.input_ctn, self.input_txt);
+                        result_input = general.formatString(self.input_ctn, "", self.input_txt);
                         result_input = general.formatString(result_input, name, extra.color, extra.icon, input, extra.attr_style, extra.model,
                             "ip" + name, extra.max_len, extra.form_err, extra.msg_exp + ",'pattern'", name);
                         break;
                         //compareTo for Msg Exp
                     case "password":
-                        var ip1 = general.formatString(self.input_ctn, self.input_pwd1);
+                        var ip1 = general.formatString(self.input_ctn, "", self.input_pwd1);
                         ip1 = general.formatString(ip1, name, extra.color, extra.icon, input, extra.attr_style, extra.model,
                             "ip" + name, extra.max_len, extra.form_err, extra.msg_exp, name);
 
-                        var ip2 = general.formatString(self.input_ctn, self.input_pwd2);
+                        var ip2 = general.formatString(self.input_ctn, "", self.input_pwd2);
                         ip2 = general.formatString(ip2, "Confirm " + name, extra.color, extra.icon2, input, extra.attr_style, extra.model2,
                             "ipconfirm" + name, extra.model, extra.max_len, extra.form_err, extra.msg_exp + ",'compareTo'", "confirm " + name);
 
                         result_input = "<div>" + ip1 + "</div><div style='padding-top:3px'>" + ip2 + "</div>";
                         break;
                     case "checkbox":
-                        result_input = general.formatString(self.input_ctn, self.input_chk);
+                        result_input = general.formatString(self.input_ctn, "", self.input_chk);
                         result_input = general.formatString(result_input, name, extra.model, name);
                         break;
                     case "objectlist":
-                        result_input = general.formatString(self.input_ctn, self.input_slc);
+                        result_input = general.formatString(self.input_ctn, "", self.input_slc);
                         result_input = general.formatString(result_input, name, extra.color, extra.icon, extra.attr_style, extra.model, extra.multi,
                             extra.objs, extra.objToShow, extra.form_err, extra.msg_exp, name);
                         break;
                     case "image":
-                        result_input = general.formatString(self.input_ctn, self.input_img);
-                        result_input = general.formatString(result_input, extra.model);
+                        result_input = general.formatString(self.input_ctn, "padding-left:20px", self.input_img);
+                        result_input = general.formatString(result_input, extra.model, extra.reload, extra.refresh);
                         break;
                     case "radio":
                         break;
@@ -158,7 +158,7 @@
             };
 
             //Input Container
-            self.input_ctn = '<md-input-container class="md-block" flex-gt-xs> {0} </md-input-container>';
+            self.input_ctn = '<md-input-container class="md-block" style="{0}" flex-gt-xs> {1} </md-input-container>';
             //0.label, 1.color, 2.icon, 3.input_type, 4.input_height, 5.model<rpc.customer[st.request_name]>, 6.attr_name<'txt'+st.name>, 
             //7.input_length, 8.form_error<customerForm['txt'+st.name].$error>, 9.msg_exp<'required', 'minlength', 'maxlength'>, 10, err_msg              
             self.input_txt = '<label>{0}</label>' +
@@ -185,7 +185,7 @@
                 '<div ng-messages="{8}"><div ng-message-exp="[{9}]">Invalid {10}.</div></div>';
             self.input_chk = "<md-checkbox md-no-ink aria-label='{0}' ng-model='{1}' class='md-primary sd-checkbox'>" +
                 "{2}</md-checkbox>";
-            self.input_img = "<sd-img img-model='{0}'></sd-img>";
+            self.input_img = "<sd-img img-model='{0}' p-load='{1}' p-load-img='{2}'></sd-img>";
             return self;
         }
     ]);

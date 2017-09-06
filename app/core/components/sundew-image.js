@@ -4,7 +4,9 @@
         templateUrl: "app/core/components/sundew-image.component.html",
         controller: "ImageCtrl as ic",
         bindings: {
-            imgModel: '='
+            imgModel: '=',
+            pLoad: '&?',
+            pLoadImg: '=?'
         }
     });
 })();

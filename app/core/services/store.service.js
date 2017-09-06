@@ -49,6 +49,8 @@
         self._user = null;
         self._accessToken = null;
 
+        
+
         self.setUser = function (user) {
             self._user = $base64.encode(JSON.stringify(user));
 

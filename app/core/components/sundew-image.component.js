@@ -5,30 +5,40 @@ angular.module('common.components').controller('ImageCtrl', [
         self.href = "";
 
         self.init = function () {
+            self.pLoadImg = {
+                refresh: self.setImgModel
+            };
             self.load_image();
         };
 
         self.open_dialog = function (ev) {
             console.log('open-dialog');
-            $mdDialog.show({
-                    locals: {
-                        load_self: self.open_dialog
-                    },
-                    controller: "DriveDialogCtrl as ddc",
-                    templateUrl: 'app/core/components/sundew-drive.dialog.html',
-                    parent: angular.element(document.body),
-                    targetEvent: ev,
-                    clickOutsideToClose: false,
-                    fullscreen: $scope.customFullscreen
-                })
-                .then(function (data) {
-                    self.setImgModel(data);
-                }, function () {
+            if (self.pLoad) {
+                self.pLoad();
+            } else {
+                $mdDialog.show({
+                        locals: {
+                            load_self: self.open_dialog
+                        },
+                        controller: "DriveDialogCtrl as ddc",
+                        templateUrl: 'app/core/components/sundew-drive.dialog.html',
+                        parent: angular.element(document.body),
+                        targetEvent: ev,
+                        clickOutsideToClose: false,
+                        fullscreen: $scope.customFullscreen
+                    })
+                    .then(function (data) {
+                        self.setImgModel(data);
+                    }, function () {
 
-                });
+                    });
+            }
         };
 
         self.setImgModel = function (data) {
+            console.clear();
+            console.log('set img model');
+            console.log(data);
             self.imgModel = data.selected;
             console.log(self.imgModel);
             self.load_image();
@@ -40,7 +50,9 @@ angular.module('common.components').controller('ImageCtrl', [
         };
 
         self.isHide = function () {
-            if (!self.imgModel["&file_links"] ||
+            if (
+                self.imgModel === undefined ||
+                !self.imgModel["&file_links"] ||
                 !self.imgModel["&file_links"].private.href) {
                 return true;
             } else return false;

@@ -49,7 +49,7 @@
             });
         };
 
-        hs.POST = function (url, headers, jsondata, callback, errcallback) {
+        hs.POST = function (url, headers, jsondata, callback, errcallback, extra) {
             $http({
                 method: "POST",
                 url: url,
@@ -58,7 +58,7 @@
                 timeout: hs.timeout
             }).then(function successCallback(response) {
                 if (callback)
-                    callback(response);
+                    callback(response, extra);
             }, function errorCallback(response) {
                 //TODO: Error Handling 
                 if (errcallback)
@@ -66,7 +66,7 @@
             });
         };
 
-        hs.PUT = function (url, headers, jsondata, callback, errcallback) {
+        hs.PUT = function (url, headers, jsondata, callback, errcallback, extra) {
             $http({
                 method: "PUT",
                 url: url,
@@ -75,7 +75,7 @@
                 timeout: hs.timeout
             }).then(function successCallback(response) {
                 if (callback)
-                    callback(response);
+                    callback(response, extra);
             }, function errorCallback(response) {
                 //TODO: Error Handling 
                 if (errcallback)
@@ -83,7 +83,7 @@
             });
         };
 
-        hs.DELETE = function (url, headers, callback, errcallback) {
+        hs.DELETE = function (url, headers, callback, errcallback, extra) {
 
             $http({
                 method: "DELETE",
@@ -92,14 +92,14 @@
                 timeout: hs.timeout
             }).then(function successCallback(response) {
                 if (callback)
-                    callback(response);
+                    callback(response, extra);
             }, function errorCallback(response) {
                 if (errcallback)
                     errcallback(response);
             });
         };
 
-        hs.PAGINATE = function (url, page, pageSize, headers, callback, errcallback) {
+        hs.PAGINATE = function (url, page, pageSize, headers, callback, errcallback, extra) {
             $http({
                 method: "GET",
                 url: url + "?page=" + page + "&size=" + pageSize,
@@ -107,14 +107,14 @@
                 timeout: hs.timeout
             }).then(function successCallback(response) {
                 if (callback)
-                    callback(response);
+                    callback(response, extra);
             }, function errorCallback(response) {
                 if (errcallback)
                     errcallback(response);
             });
         };
 
-        hs.FD_POST = function (url, formData, headers, callback, errcallback) {
+        hs.FD_POST = function (url, formData, headers, callback, errcallback, extra) {
             $http.post(url, formData, {
                     transformRequest: angular.identity,
                     headers: headers,
@@ -130,7 +130,7 @@
                 })
                 .success(function (response) {
                     if (callback)
-                        callback(response);
+                        callback(response, extra);
                 })
                 .error(function (response) {
                     if (errcallback)

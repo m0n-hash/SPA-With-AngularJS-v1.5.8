@@ -79,7 +79,7 @@
                         controller: vwData.controller,
                         controllerAs: vwData.controllerAs
                     });
-                    
+
                     mc.selectedTab = mc.menu_navs.length - 1;
                     //An Ugly work around for selectedTab to update. XD
                     //Set selectedTab to SelectedTab
@@ -96,6 +96,7 @@
                     //An Ugly work around for selectedTab to update. XD
                     //Set selectedTab to SelectedTab
                     mc.selectedtab = mc.selectedtab;
+                    console.log('selected', mc.selectedTab);
                 }
             };
 

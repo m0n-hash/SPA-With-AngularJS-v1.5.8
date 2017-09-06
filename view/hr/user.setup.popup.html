@@ -43,10 +43,23 @@
                     </md-tab>
                     <md-tab label="roleTab">
                         <md-content class="md-padding content-view">
+
                             <div ng-controller="RoleCtrl as rc">
                                 <div ng-include="'role.setup.html'">
                                 </div>
                             </div>
+
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="driveTab">
+                        <md-content class="md-padding content-view">
+                            <sd-drive p-select="urc.profile" p-context='false'></sd-drive>
+                            <md-button ng-click="urc.setProfile(urc.profile)" class="md-accent md-raised" data-context-event="contextmenu" data-context-menu="app/core/components/sundew-drive.contextmenu.html">
+                                Ok
+                            </md-button>
+                            <md-button ng-click="urc.loadTab(0)" style="margin-right:20px;">
+                                Cancel
+                            </md-button>
                         </md-content>
                     </md-tab>
                 </md-tabs>

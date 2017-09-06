@@ -9,8 +9,8 @@ TODO:   Skip Is Online <To Skip in entry>
     'use strict';
 
     angular.module('SundewApp.Controllers').controller('UserPopupCtrl', [
-        '$scope', '$mdDialog', 'structure', 'status', 'event', 'user', 'general', 'http', 'config', 'inputc',
-        function ($scope, $mdDialog, structure, status, event, user, general, http, config, inputc) {
+        '$scope', '$mdDialog', 'structure', 'status', 'event', 'user', 'general', 'http', 'config', 'inputc', 'safeApply',
+        function ($scope, $mdDialog, structure, status, event, user, general, http, config, inputc, safeApply) {
             var self = this;
             self.structure = structure;
             self.status = status;
@@ -18,6 +18,7 @@ TODO:   Skip Is Online <To Skip in entry>
             self.title = "";
             self.user = user;
             self.selectedTab = null;
+            self.profile = null;
 
             self.icons = [{}, {
                 icon: 'perm_identity',
@@ -47,20 +48,45 @@ TODO:   Skip Is Online <To Skip in entry>
                 }
 
                 var iconSets = inputc.whIcon(data.name);
-
                 var extra = {
                     color: iconSets.data.color,
                     icon: iconSets.data.icon,
                     icon2: iconSets.data.icon2,
                     attr_style: "",
+                    modelObj: "urc.user",
                     model: "urc.user." + data.name,
                     model2: "urc.user." + data.name + "2",
                     max_len: data.length,
                     form_err: "userForm['txt" + data.name + "'].$error",
                     msg_exp: "'required', 'minlength', 'maxlength'",
+                    reload: 'urc.load()',
+                    refresh: 'urc.refresh_img'
                 };
-
                 return inputc.whInput(data.label, data.input_type, extra);
+            };
+
+            self.refresh_img = {};
+
+            self.load = function () {
+                self.profile = null;
+                self.loadTab(2);
+            };
+
+            self.setProfile = function (data) {
+                safeApply($scope, function () {
+                    self.user.profile_image = angular.copy(data);
+                    self.loadTab(0);
+                    if (self.refresh_img.refresh) {
+                        self.refresh_img.refresh({
+                            selected: data
+                        });
+                    }
+                });
+            };
+
+            //0:default, 1:role, 2:drive
+            self.loadTab = function (idx) {
+                self.selectedTab = idx;
             };
 
             self.cancel = function () {
