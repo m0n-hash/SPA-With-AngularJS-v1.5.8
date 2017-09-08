@@ -18,7 +18,7 @@
     angular.module('common.services').factory('http', ['$http', function ($http) {
         var hs = this;
         //Time Out For Http Request Fail after 60s 
-        hs.timeout = 6000;
+        hs.timeout = 600000;
 
         hs.GET = function (url, headers, callback, errcallback, extra) {
             $http({

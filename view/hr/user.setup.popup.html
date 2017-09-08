@@ -1,74 +1,85 @@
 <md-dialog class="full-sc-dialog" aria-label="Show Columns" md-theme="SundewTheme">
-    <form ng-cloak name="userForm">
-        <md-toolbar style="background-color:#4D3343">
-            <div class="md-toolbar-tools">
-                <legend style="padding:20px 0px 0px 20px;">
-                    User {{urc.title}}
-                </legend>
-                <span flex></span>
-                <md-button class="md-icon-button" ng-click="urc.cancel()">
-                    <md-icon md-font-icon="material-icons" aria-label="Close dialog">close</md-icon>
-                </md-button>
-            </div>
-        </md-toolbar>
 
-        <md-dialog-content>
-            <div layout-gt-xs="row">
-                <md-tabs flex="100" class="sd-tab-noheader" id="user-tab" md-selected="urc.selectedTab" md-border-bottom md-dynamic-height>
-                    <md-tab label="userTab">
-                        <md-content class="md-padding content-view">
-                            <div flex layout="column">
+    <md-toolbar style="background-color:#4D3343">
+        <div class="md-toolbar-tools">
+            <md-icon md-font-icon="material-icons">person</md-icon>
+            <legend style="padding: 3px 0 0 10px;">
+                User {{urc.title}}
+            </legend>
+            <span flex></span>
 
+            <md-button ng-if="urc.btnActions.btnBak" class="md-icon-button" ng-click="urc.loadTab(0)">
+                <md-tooltip md-direction="bottom">Back</md-tooltip>
+                <md-icon md-menu-origin="" md-font-icon="material-icons">reply</md-icon>
+                Back
+            </md-button>
+            <md-button ng-if="urc.btnActions.btnSelect" class="md-icon-button md-warn" ng-click="urc.setProfile(urc.profile)">
+                <md-tooltip md-direction="bottom">Select</md-tooltip>
+                <md-icon md-menu-origin="" md-font-icon="material-icons">touch_app</md-icon>
+                Select
+            </md-button>
+            <md-button ng-disabled="userForm.$invalid" ng-if="urc.btnActions.btnSave" class="md-icon-button md-accent" ng-click="urc.answer()">
+                <md-tooltip md-direction="bottom">Save</md-tooltip>
+                <md-icon md-menu-origin="" md-font-icon="material-icons">save</md-icon>
+                Save
+            </md-button>
+            <md-button ng-if="urc.btnActions.btnRole" class="md-icon-button md-primary" ng-click="urc.loadTab(1)">
+                <md-tooltip md-direction="bottom">Role Setup</md-tooltip>
+                <md-icon md-menu-origin="" md-font-icon="material-icons">equalizer</md-icon>
+                Role Setup
+            </md-button>
+            <md-button class="md-icon-button" ng-click="urc.cancel()">
+                <md-tooltip md-direction="bottom">Cancel/Close</md-tooltip>
+                <md-icon md-font-icon="material-icons" aria-label="Close dialog">close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <div layout-gt-xs="row">
+            <md-tabs flex="100" class="sd-tab-noheader" id="user-tab" md-selected="urc.selectedTab" md-border-bottom md-dynamic-height>
+                <!--User Generate Tab-->
+                <md-tab label="userTab">
+                    <md-content class="md-padding content-view">
+                        <div flex layout="column">
+                            <form ng-cloak name="userForm">
+                            
                                 <div bind-html-compile="urc.compileStruct(item)" compile-template ng-repeat="item in urc.structure">
 
                                 </div>
+                            
+                            </form>
+                        </div>
+                        <div layout="row">
 
-                            </div>
-                            <div layout="row">
-                                <md-button ng-disabled="customerForm.$invalid" class="md-accent md-raised" ng-click="urc.answer()">
-                                    <md-icon md-menu-origin="" md-font-icon="material-icons">verified_user</md-icon>
-                                    Save
-                                </md-button>
-                                <md-button style="padding-right:40px" class="md-primary" ng-click="urc.cancel()">
-                                    <md-icon md-menu-origin="" md-font-icon="material-icons">verified_user</md-icon>
-                                    Cancel
-                                </md-button>
-                                <md-button style="padding-right:40px" class="md-primary" ng-click="urc.goto('role')">
-                                    <md-icon md-menu-origin="" md-font-icon="material-icons">verified_user</md-icon>
-                                    Role Setup
-                                </md-button>
-                            </div>
-                        </md-content>
-
-                    </md-tab>
-                    <md-tab label="roleTab">
-                        <md-content class="md-padding content-view">
-
-                            <div ng-controller="RoleCtrl as rc">
-                                <div ng-include="'role.setup.html'">
-                                </div>
-                            </div>
-
-                        </md-content>
-                    </md-tab>
-                    <md-tab label="driveTab">
-                        <md-content class="md-padding content-view">
-                            <sd-drive p-select="urc.profile" p-context='false'></sd-drive>
-                            <md-button ng-click="urc.setProfile(urc.profile)" class="md-accent md-raised" data-context-event="contextmenu" data-context-menu="app/core/components/sundew-drive.contextmenu.html">
-                                Ok
-                            </md-button>
-                            <md-button ng-click="urc.loadTab(0)" style="margin-right:20px;">
-                                Cancel
-                            </md-button>
-                        </md-content>
-                    </md-tab>
-                </md-tabs>
-            </div>
-        </md-dialog-content>
-        <!--
+                        </div>
+                    </md-content>
+                </md-tab>
+                <!--Role Tab-->
+                <md-tab label="roleTab">
+                    <div ng-controller="RoleCtrl as rc">
+                        <div ng-include="'view/hr/role.setup.html'">
+                        </div>
+                    </div>
+                </md-tab>
+                <!--Drive Tab-->
+                <md-tab label="driveTab">
+                    <sd-drive p-select="urc.profile" p-context='false'></sd-drive>
+                    <!--
+                        <md-button ng-click="urc.setProfile(urc.profile)" class="md-accent md-raised" data-context-event="contextmenu" data-context-menu="app/core/components/sundew-drive.contextmenu.html">
+                            Ok
+                        </md-button>
+                        <md-button ng-click="urc.loadTab(0)" style="margin-right:20px;">
+                            Cancel
+                        </md-button>
+                    -->
+                </md-tab>
+            </md-tabs>
+        </div>
+    </md-dialog-content>
+    <!--
         <md-dialog-actions layout="row">
             
         </md-dialog-actions>
         -->
-    </form>
 </md-dialog>

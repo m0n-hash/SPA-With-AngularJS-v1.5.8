@@ -54,6 +54,7 @@
             };
 
             self.data_error = function (response) {
+                console.log(response);
                 if (response.status == 502 || response.status == 400) {
                     self.error(response.statusText + ": Please check your internet connection and try again!");
                 } else if (response.data === null) {

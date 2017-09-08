@@ -96,11 +96,11 @@ angular.module('SundewApp.Controllers').controller('CustomerPopupCtrl', [
                 general.error("Internal Server Error!");
 
             progress(false);
-        }
+        };
 
         self.error_callback = function (response) {
             progress(false);
-        }
+        };
 
         self.answer = function () {
             progress(true);

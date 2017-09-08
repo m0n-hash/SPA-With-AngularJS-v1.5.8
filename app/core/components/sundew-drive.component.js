@@ -7,6 +7,7 @@ angular.module('common.components').controller('DriveCtrl', [
         self.selected = {};
         self.rearrange = true;
         self.rawImages = {};
+        self.filterText;
 
         self.getFile = function () {
             http.GET(config.API_URL + "files/", store.HEADER(), self.GetCallback, self.ErrCallback);

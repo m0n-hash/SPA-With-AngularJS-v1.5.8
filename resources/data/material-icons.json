@@ -1,0 +1,892 @@
+/*
+    TODO: Check These Icons Json really works
+    Reference Links
+    https://codepen.io/twinsin/full/gaKvMZ
+    https://github.com/google/material-design-icons/blob/master/iconfont/codepoints
+*/
+[{
+    "class": "local_pizza",
+    "label": "local pizza"
+}, {
+    "class": "local_play",
+    "label": "local play"
+}, {
+    "class": "local_post_office",
+    "label": "local post office"
+}, {
+    "class": "local_printshop",
+    "label": "local printshop"
+}, {
+    "class": "local_see",
+    "label": "local see"
+}, {
+    "class": "local_shipping",
+    "label": "local shipping"
+}, {
+    "class": "local_taxi",
+    "label": "local taxi"
+}, {
+    "class": "map",
+    "label": "map"
+}, {
+    "class": "panorama_vertical",
+    "label": "panorama vertical"
+}, {
+    "class": "control_point_duplicate",
+    "label": "control point duplicate"
+}, {
+    "class": "control_point",
+    "label": "control point"
+}, {
+    "class": "compare",
+    "label": "compare"
+}, {
+    "class": "colorize",
+    "label": "colorize"
+}, {
+    "class": "color_lens",
+    "label": "color lens"
+}, {
+    "class": "tap_and_play",
+    "label": "tap and play"
+}, {
+    "class": "system_update",
+    "label": "system update"
+}, {
+    "class": "sync_problem",
+    "label": "sync problem"
+}, {
+    "class": "access_alarm",
+    "label": "access alarm"
+}, {
+    "class": "more_horiz",
+    "label": "more horiz"
+}, {
+    "class": "local_bar",
+    "label": "local bar"
+}, {
+    "class": "local_cafe",
+    "label": "local cafe"
+}, {
+    "class": "local_car_wash",
+    "label": "local car wash"
+}, {
+    "class": "local_convenience_store",
+    "label": "local convenience store"
+}, {
+    "class": "border_right",
+    "label": "border right"
+}, {
+    "class": "photo",
+    "label": "photo"
+}, {
+    "class": "panorama_wide_angle",
+    "label": "panorama wide angle"
+}, {
+    "class": "do_not_disturb_alt",
+    "label": "do not disturb alt"
+}, {
+    "class": "group_add",
+    "label": "group add"
+}, {
+    "class": "location_city",
+    "label": "location city"
+}, {
+    "class": "my_location",
+    "label": "my location"
+}, {
+    "class": "crop_3_2",
+    "label": "crop 3 2"
+}, {
+    "class": "crop_5_4",
+    "label": "crop 5 4"
+}, {
+    "class": "sync_disabled",
+    "label": "sync disabled"
+}, {
+    "class": "palette",
+    "label": "palette"
+}, {
+    "class": "navigate_next",
+    "label": "navigate next"
+}, {
+    "class": "navigate_before",
+    "label": "navigate before"
+}, {
+    "class": "border_style",
+    "label": "border style"
+}, {
+    "class": "border_top",
+    "label": "border top"
+}, {
+    "class": "border_vertical",
+    "label": "border vertical"
+}, {
+    "class": "format_align_center",
+    "label": "format align center"
+}, {
+    "class": "format_align_justify",
+    "label": "format align justify"
+}, {
+    "class": "format_align_left",
+    "label": "format align left"
+}, {
+    "class": "format_align_right",
+    "label": "format align right"
+}, {
+    "class": "format_bold",
+    "label": "format bold"
+}, {
+    "class": "format_clear",
+    "label": "format clear"
+}, {
+    "class": "functions",
+    "label": "functions"
+}, {
+    "class": "insert_chart",
+    "label": "insert chart"
+}, {
+    "class": "more_vert",
+    "label": "more vert"
+}, {
+    "class": "directions_subway",
+    "label": "directions subway"
+}, {
+    "class": "wc",
+    "label": "wc"
+}, {
+    "class": "wifi",
+    "label": "wifi"
+}, {
+    "class": "cake",
+    "label": "cake"
+}, {
+    "class": "domain",
+    "label": "domain"
+}, {
+    "class": "group",
+    "label": "group"
+}, {
+    "class": "format_list_bulleted",
+    "label": "format list bulleted"
+}, {
+    "class": "format_list_numbered",
+    "label": "format list numbered"
+}, {
+    "class": "format_paint",
+    "label": "format paint"
+}, {
+    "class": "format_quote",
+    "label": "format quote"
+}, {
+    "class": "format_size",
+    "label": "format size"
+}, {
+    "class": "format_strikethrough",
+    "label": "format strikethrough"
+}, {
+    "class": "format_textdirection_l_to_r",
+    "label": "format textdirection l to r"
+}, {
+    "class": "format_textdirection_r_to_l",
+    "label": "format textdirection r to l"
+}, {
+    "class": "format_underlined",
+    "label": "format underlined"
+}, {
+    "class": "do_not_disturb",
+    "label": "do not disturb"
+}, {
+    "class": "disc_full",
+    "label": "disc full"
+}, {
+    "class": "confirmation_number",
+    "label": "confirmation number"
+}, {
+    "class": "bluetooth_audio",
+    "label": "bluetooth audio"
+}, {
+    "class": "battery_alert",
+    "label": "battery alert"
+}, {
+    "class": "battery_charging_full",
+    "label": "battery charging full"
+}, {
+    "class": "battery_full",
+    "label": "battery full"
+}, {
+    "class": "battery_std",
+    "label": "battery std"
+}, {
+    "class": "location_disabled",
+    "label": "location disabled"
+}, {
+    "class": "format_line_spacing",
+    "label": "format line spacing"
+}, {
+    "class": "format_italic",
+    "label": "format italic"
+}, {
+    "class": "format_indent_increase",
+    "label": "format indent increase"
+}, {
+    "class": "format_indent_decrease",
+    "label": "format indent decrease"
+}, {
+    "class": "format_color_text",
+    "label": "format color text"
+}, {
+    "class": "format_color_reset",
+    "label": "format color reset"
+}, {
+    "class": "format_color_fill",
+    "label": "format color fill"
+}, {
+    "class": "network_cell",
+    "label": "network cell"
+}, {
+    "class": "location_searching",
+    "label": "location searching"
+}, {
+    "class": "border_clear",
+    "label": "border clear"
+}, {
+    "class": "border_bottom",
+    "label": "border bottom"
+}, {
+    "class": "border_all",
+    "label": "border all"
+}, {
+    "class": "attach_money",
+    "label": "attach money"
+}, {
+    "class": "attach_file",
+    "label": "attach file"
+}, {
+    "class": "wifi_tethering",
+    "label": "wifi tethering"
+}, {
+    "class": "wifi_lock",
+    "label": "wifi lock"
+}, {
+    "class": "nfc",
+    "label": "nfc"
+}, {
+    "class": "network_wifi",
+    "label": "network wifi"
+}, {
+    "class": "panorama",
+    "label": "panorama"
+}, {
+    "class": "crop_square",
+    "label": "crop square"
+}, {
+    "class": "crop_portrait",
+    "label": "crop portrait"
+}, {
+    "class": "crop_original",
+    "label": "crop original"
+}, {
+    "class": "crop_landscape",
+    "label": "crop landscape"
+}, {
+    "class": "crop_free",
+    "label": "crop free"
+}, {
+    "class": "crop_din",
+    "label": "crop din"
+}, {
+    "class": "crop_7_5",
+    "label": "crop 7 5"
+}, {
+    "class": "public",
+    "label": "public"
+}, {
+    "class": "voice_chat",
+    "label": "voice chat"
+}, {
+    "class": "vibration",
+    "label": "vibration"
+}, {
+    "class": "time_to_leave",
+    "label": "time to leave"
+}, {
+    "class": "event_note",
+    "label": "event note"
+}, {
+    "class": "event_busy",
+    "label": "event busy"
+}, {
+    "class": "event_available",
+    "label": "event available"
+}, {
+    "class": "drive_eta",
+    "label": "drive eta"
+}, {
+    "class": "airline_seat_flat",
+    "label": "airline seat flat"
+}, {
+    "class": "adb",
+    "label": "adb"
+}, {
+    "class": "indeterminate_check_box",
+    "label": "indeterminate check box"
+}, {
+    "class": "check_box_outline_blank",
+    "label": "check box outline blank"
+}, {
+    "class": "check_box",
+    "label": "check box"
+}, {
+    "class": "local_phone",
+    "label": "local phone"
+}, {
+    "class": "satellite",
+    "label": "satellite"
+}, {
+    "class": "store_mall_directory",
+    "label": "store mall directory"
+}, {
+    "class": "directions_transit",
+    "label": "directions transit"
+}, {
+    "class": "refresh",
+    "label": "refresh"
+}, {
+    "class": "vpn_lock",
+    "label": "vpn lock"
+}, {
+    "class": "looks_4",
+    "label": "looks 4"
+}, {
+    "class": "looks_5",
+    "label": "looks 5"
+}, {
+    "class": "looks_6",
+    "label": "looks 6"
+}, {
+    "class": "directions_bike",
+    "label": "directions bike"
+}, {
+    "class": "directions_boat",
+    "label": "directions boat"
+}, {
+    "class": "directions_bus",
+    "label": "directions bus"
+}, {
+    "class": "party_mode",
+    "label": "party mode"
+}, {
+    "class": "people",
+    "label": "people"
+}, {
+    "class": "border_horizontal",
+    "label": "border horizontal"
+}, {
+    "class": "notifications_active",
+    "label": "notifications active"
+}, {
+    "class": "notifications_none",
+    "label": "notifications none"
+}, {
+    "class": "notifications_off",
+    "label": "notifications off"
+}, {
+    "class": "notifications_paused",
+    "label": "notifications paused"
+}, {
+    "class": "pages",
+    "label": "pages"
+}, {
+    "class": "wb_sunny",
+    "label": "wb sunny"
+}, {
+    "class": "sync",
+    "label": "sync"
+}, {
+    "class": "mood",
+    "label": "mood"
+}, {
+    "class": "border_color",
+    "label": "border color"
+}, {
+    "class": "star_half",
+    "label": "star half"
+}, {
+    "class": "local_hospital",
+    "label": "local hospital"
+}, {
+    "class": "local_grocery_store",
+    "label": "local grocery store"
+}, {
+    "class": "local_gas_station",
+    "label": "local gas station"
+}, {
+    "class": "local_florist",
+    "label": "local florist"
+}, {
+    "class": "local_drink",
+    "label": "local drink"
+}, {
+    "class": "local_dining",
+    "label": "local dining"
+}, {
+    "class": "mood_bad",
+    "label": "mood bad"
+}, {
+    "class": "notifications",
+    "label": "notifications"
+}, {
+    "class": "dehaze",
+    "label": "dehaze"
+}, {
+    "class": "airline_seat_recline_normal",
+    "label": "airline seat recline normal"
+}, {
+    "class": "airline_seat_recline_extra",
+    "label": "airline seat recline extra"
+}, {
+    "class": "airline_seat_legroom_reduced",
+    "label": "airline seat legroom reduced"
+}, {
+    "class": "airline_seat_legroom_normal",
+    "label": "airline seat legroom normal"
+}, {
+    "class": "airline_seat_legroom_extra",
+    "label": "airline seat legroom extra"
+}, {
+    "class": "airline_seat_individual_suite",
+    "label": "airline seat individual suite"
+}, {
+    "class": "airline_seat_flat_angled",
+    "label": "airline seat flat angled"
+}, {
+    "class": "star_border",
+    "label": "star border"
+}, {
+    "class": "navigation",
+    "label": "navigation"
+}, {
+    "class": "person_pin",
+    "label": "person pin"
+}, {
+    "class": "pin_drop",
+    "label": "pin drop"
+}, {
+    "class": "place",
+    "label": "place"
+}, {
+    "class": "rate_review",
+    "label": "rate review"
+}, {
+    "class": "restaurant_menu",
+    "label": "restaurant menu"
+}, {
+    "class": "directions_car",
+    "label": "directions car"
+}, {
+    "class": "directions_railway",
+    "label": "directions railway"
+}, {
+    "class": "people_outline",
+    "label": "people outline"
+}, {
+    "class": "poll",
+    "label": "poll"
+}, {
+    "class": "plus_one",
+    "label": "plus one"
+}, {
+    "class": "person_outline",
+    "label": "person outline"
+}, {
+    "class": "person_add",
+    "label": "person add"
+}, {
+    "class": "person",
+    "label": "person"
+}, {
+    "class": "check",
+    "label": "check"
+}, {
+    "class": "chevron_left",
+    "label": "chevron left"
+}, {
+    "class": "chevron_right",
+    "label": "chevron right"
+}, {
+    "class": "close",
+    "label": "close"
+}, {
+    "class": "whatshot",
+    "label": "whatshot"
+}, {
+    "class": "directions_run",
+    "label": "directions run"
+}, {
+    "class": "star",
+    "label": "star"
+}, {
+    "class": "border_inner",
+    "label": "border inner"
+}, {
+    "class": "border_left",
+    "label": "border left"
+}, {
+    "class": "arrow_drop_down_circle",
+    "label": "arrow drop down circle"
+}, {
+    "class": "arrow_drop_up",
+    "label": "arrow drop up"
+}, {
+    "class": "arrow_forward",
+    "label": "arrow forward"
+}, {
+    "class": "cancel",
+    "label": "cancel"
+}, {
+    "class": "looks_3",
+    "label": "looks 3"
+}, {
+    "class": "looks",
+    "label": "looks"
+}, {
+    "class": "lens",
+    "label": "lens"
+}, {
+    "class": "leak_remove",
+    "label": "leak remove"
+}, {
+    "class": "directions",
+    "label": "directions"
+}, {
+    "class": "beenhere",
+    "label": "beenhere"
+}, {
+    "class": "looks_two",
+    "label": "looks two"
+}, {
+    "class": "looks_one",
+    "label": "looks one"
+}, {
+    "class": "signal_cellular_null",
+    "label": "signal cellular null"
+}, {
+    "class": "signal_cellular_off",
+    "label": "signal cellular off"
+}, {
+    "class": "signal_wifi_4_bar",
+    "label": "signal wifi 4 bar"
+}, {
+    "class": "signal_wifi_4_bar_lock",
+    "label": "signal wifi 4 bar lock"
+}, {
+    "class": "signal_wifi_off",
+    "label": "signal wifi off"
+}, {
+    "class": "storage",
+    "label": "storage"
+}, {
+    "class": "usb",
+    "label": "usb"
+}, {
+    "class": "wallpaper",
+    "label": "wallpaper"
+}, {
+    "class": "widgets",
+    "label": "widgets"
+}, {
+    "class": "screen_lock_landscape",
+    "label": "screen lock landscape"
+}, {
+    "class": "screen_lock_portrait",
+    "label": "screen lock portrait"
+}, {
+    "class": "screen_lock_rotation",
+    "label": "screen lock rotation"
+}, {
+    "class": "screen_rotation",
+    "label": "screen rotation"
+}, {
+    "class": "sd_storage",
+    "label": "sd storage"
+}, {
+    "class": "settings_system_daydream",
+    "label": "settings system daydream"
+}, {
+    "class": "signal_cellular_4_bar",
+    "label": "signal cellular 4 bar"
+}, {
+    "class": "signal_cellular_connected_no_internet_4_bar",
+    "label": "signal cellular connected no internet 4 bar"
+}, {
+    "class": "signal_cellular_no_sim",
+    "label": "signal cellular no sim"
+}, {
+    "class": "school",
+    "label": "school"
+}, {
+    "class": "share",
+    "label": "share"
+}, {
+    "class": "directions_walk",
+    "label": "directions walk"
+}, {
+    "class": "flight",
+    "label": "flight"
+}, {
+    "class": "hotel",
+    "label": "hotel"
+}, {
+    "class": "layers",
+    "label": "layers"
+}, {
+    "class": "layers_clear",
+    "label": "layers clear"
+}, {
+    "class": "local_activity",
+    "label": "local activity"
+}, {
+    "class": "wb_iridescent",
+    "label": "wb iridescent"
+}, {
+    "class": "wb_incandescent",
+    "label": "wb incandescent"
+}, {
+    "class": "wb_cloudy",
+    "label": "wb cloudy"
+}, {
+    "class": "wb_auto",
+    "label": "wb auto"
+}, {
+    "class": "local_atm",
+    "label": "local atm"
+}, {
+    "class": "access_alarms",
+    "label": "access alarms"
+}, {
+    "class": "access_time",
+    "label": "access time"
+}, {
+    "class": "add_alarm",
+    "label": "add alarm"
+}, {
+    "class": "airplanemode_active",
+    "label": "airplanemode active"
+}, {
+    "class": "airplanemode_inactive",
+    "label": "airplanemode inactive"
+}, {
+    "class": "local_airport",
+    "label": "local airport"
+}, {
+    "class": "panorama_horizontal",
+    "label": "panorama horizontal"
+}, {
+    "class": "panorama_fish_eye",
+    "label": "panorama fish eye"
+}, {
+    "class": "radio_button_unchecked",
+    "label": "radio button unchecked"
+}, {
+    "class": "radio_button_checked",
+    "label": "radio button checked"
+}, {
+    "class": "border_outer",
+    "label": "border outer"
+}, {
+    "class": "music_note",
+    "label": "music note"
+}, {
+    "class": "nature",
+    "label": "nature"
+}, {
+    "class": "nature_people",
+    "label": "nature people"
+}, {
+    "class": "crop",
+    "label": "crop"
+}, {
+    "class": "crop_16_9",
+    "label": "crop 16 9"
+}, {
+    "class": "arrow_drop_down",
+    "label": "arrow drop down"
+}, {
+    "class": "arrow_back",
+    "label": "arrow back"
+}, {
+    "class": "apps",
+    "label": "apps"
+}, {
+    "class": "traffic",
+    "label": "traffic"
+}, {
+    "class": "terrain",
+    "label": "terrain"
+}, {
+    "class": "camera",
+    "label": "camera"
+}, {
+    "class": "camera_alt",
+    "label": "camera alt"
+}, {
+    "class": "camera_front",
+    "label": "camera front"
+}, {
+    "class": "camera_rear",
+    "label": "camera rear"
+}, {
+    "class": "camera_roll",
+    "label": "camera roll"
+}, {
+    "class": "center_focus_strong",
+    "label": "center focus strong"
+}, {
+    "class": "center_focus_weak",
+    "label": "center focus weak"
+}, {
+    "class": "collections",
+    "label": "collections"
+}, {
+    "class": "collections_bookmark",
+    "label": "collections bookmark"
+}, {
+    "class": "expand_less",
+    "label": "expand less"
+}, {
+    "class": "expand_more",
+    "label": "expand more"
+}, {
+    "class": "fullscreen",
+    "label": "fullscreen"
+}, {
+    "class": "fullscreen_exit",
+    "label": "fullscreen exit"
+}, {
+    "class": "menu",
+    "label": "menu"
+}, {
+    "class": "graphic_eq",
+    "label": "graphic eq"
+}, {
+    "class": "gps_off",
+    "label": "gps off"
+}, {
+    "class": "gps_not_fixed",
+    "label": "gps not fixed"
+}, {
+    "class": "gps_fixed",
+    "label": "gps fixed"
+}, {
+    "class": "dvr",
+    "label": "dvr"
+}, {
+    "class": "devices",
+    "label": "devices"
+}, {
+    "class": "developer_mode",
+    "label": "developer mode"
+}, {
+    "class": "data_usage",
+    "label": "data usage"
+}, {
+    "class": "brightness_medium",
+    "label": "brightness medium"
+}, {
+    "class": "brightness_low",
+    "label": "brightness low"
+}, {
+    "class": "brightness_high",
+    "label": "brightness high"
+}, {
+    "class": "brightness_auto",
+    "label": "brightness auto"
+}, {
+    "class": "bluetooth_searching",
+    "label": "bluetooth searching"
+}, {
+    "class": "bluetooth_disabled",
+    "label": "bluetooth disabled"
+}, {
+    "class": "bluetooth_connected",
+    "label": "bluetooth connected"
+}, {
+    "class": "bluetooth",
+    "label": "bluetooth"
+}, {
+    "class": "battery_unknown",
+    "label": "battery unknown"
+}, {
+    "class": "movie_creation",
+    "label": "movie creation"
+}, {
+    "class": "monochrome_photos",
+    "label": "monochrome photos"
+}, {
+    "class": "loupe",
+    "label": "loupe"
+}, {
+    "class": "photo_album",
+    "label": "photo album"
+}, {
+    "class": "photo_camera",
+    "label": "photo camera"
+}, {
+    "class": "photo_library",
+    "label": "photo library"
+}, {
+    "class": "sms_failed",
+    "label": "sms failed"
+}, {
+    "class": "sms",
+    "label": "sms"
+}, {
+    "class": "sim_card_alert",
+    "label": "sim card alert"
+}, {
+    "class": "sd_card",
+    "label": "sd card"
+}, {
+    "class": "power",
+    "label": "power"
+}, {
+    "class": "phone_paused",
+    "label": "phone paused"
+}, {
+    "class": "phone_missed",
+    "label": "phone missed"
+}, {
+    "class": "phone_locked",
+    "label": "phone locked"
+}, {
+    "class": "phone_in_talk",
+    "label": "phone in talk"
+}, {
+    "class": "phone_forwarded",
+    "label": "phone forwarded"
+}, {
+    "class": "phone_bluetooth_speaker",
+    "label": "phone bluetooth speaker"
+}, {
+    "class": "personal_video",
+    "label": "personal video"
+}, {
+    "class": "ondemand_video",
+    "label": "ondemand video"
+}, {
+    "class": "network_locked",
+    "label": "network locked"
+}, {
+    "class": "more",
+    "label": "more"
+}, {
+    "class": "mms",
+    "label": "mms"
+}, {
+    "class": "live_tv",
+    "label": "live tv"
+}, {
+    "class": "folder_special",
+    "label": "folder special"
+}]

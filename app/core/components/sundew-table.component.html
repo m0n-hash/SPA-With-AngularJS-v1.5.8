@@ -75,7 +75,8 @@
                     </td>
                     <td id="{{col.request_name}}" ng-show="tc.isShow(col)" ng-repeat="col in tc.columns">
                         <!--{{data[col.request_name]}}-->
-                        {{tc.td_val(data,col)}}
+                        <span ng-if="!tc.is_img(col.input_type)">{{tc.td_val(data,col)}}</span>
+                        <img ng-if="tc.is_img(col.input_type)" src="{{tc.td_val(data,col)}}" style="width:40px; height:40px" />
                     </td>
                 </tr>
             </tbody>

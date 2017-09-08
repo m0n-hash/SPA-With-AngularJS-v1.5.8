@@ -13,7 +13,8 @@
             pPrev: '&?',
             pReload: '&?',
             pLoad: '&?',
-            pCrud: '&?'
+            pCrud: '&?',
+            pLoadImg: '=?'
         }
     });
 

@@ -1,6 +1,6 @@
 angular.module('common.components').controller('TableCtrl', [
-    '$scope', '$mdDialog', 'general',
-    function ($scope, $mdDialog, general) {
+    '$scope', '$mdDialog', 'general', 'store', 'config', 'http', 'safeApply',
+    function ($scope, $mdDialog, general, store, config, http, safeApply) {
         var self = this;
         self.val = "hello";
         self.isOpen = false;
@@ -20,6 +20,12 @@ angular.module('common.components').controller('TableCtrl', [
             //Initialize Sundew Table Visible Columns
             if (!self.showColumns)
                 self.showColumns = self.columns;
+
+            self.pLoadImg = {
+                refresh: self.getImage
+            };
+
+            self.load_imgs();
         };
 
         self.showDialog = function (ev) {
@@ -148,11 +154,64 @@ angular.module('common.components').controller('TableCtrl', [
             });
         };
 
+        self.imgs = {};
+        self.is_img = function (type) {
+            return type === 'image';
+        };
+
+        self.default_img = "resources/img/default.png";
         self.td_val = function (data, col) {
-            if (col.type == "Date") {
-                return general.formatDate(new Date(data[col.name]));
-            } else
-                return data[col.name];
+            if (col.input_type == "image") {
+                if (data[col.name]) {
+                    return self.imgs[data.name + data.id];
+                } else
+                    return self.default_img;
+            } else {
+                if (col.type == "Date") {
+                    return general.formatDate(new Date(data[col.name]));
+                } else
+                    return data[col.name];
+            }
+        };
+
+        self.callback = function (response, extra) {
+
+            self.imgs[extra] = "data:image/png;base64," + response.data;
+            self.imgs[extra] = self.imgs[extra];
+
+        };
+
+        self.error_callback = function (response) {
+            general.data_error(response);
+        };
+
+        //Loop Columns if Image fields is there
+        //Loop Data And try to load Images
+        self.load_imgs = function () {
+            self.imgs = {};
+            angular.forEach(self.columns, function (item, key) {
+                if (item.input_type == "image") {
+                    angular.forEach(self.data, function (d, key) {
+                        if (d[item.name]) {
+                            self.getImage(d, item);
+                        } else {
+                            self.imgs[d.name + d.id] = "resources/img/default.png";
+                        }
+                    });
+                }
+            });
+        };
+
+        self.getImage = function (d, item) {
+            if (d[item.name] === undefined) {
+                self.imgs[d.name + d.id] = "resources/img/default.png";
+                return;
+            }
+            var header = store.IMGHEADER();
+
+            var url = config.API_URL + d[item.name]["&file_links"].private.href + "?is64=true";
+
+            http.GET(url, header, self.callback, self.error_callback, d.name + d.id);
         };
 
         self.init();

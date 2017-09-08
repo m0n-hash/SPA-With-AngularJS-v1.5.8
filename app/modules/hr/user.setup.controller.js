@@ -12,6 +12,7 @@
             self.columns = [];
             self.keys = [];
             self.selectedUser = {};
+            self.pLoad = {};
 
             /*Table Variables*/
             self.page = 1;
@@ -83,11 +84,27 @@
                 self.total = response.data.content.total;
                 self.set_pdata();
                 self.isTableReady = true;
+
+                var current = null;
                 angular.forEach(response.data.content.data, function (row, key) {
+                    if (row.id == self.selectedUser.id)
+                        current = row;
+
                     self.users.push(row);
                 });
 
-                console.log(self.users);
+                console.log('pload', self.pLoad);
+                if (self.pLoad.refresh) {
+
+                    angular.forEach(self.columns, function (item, key) {
+                        if (item.input_type == "image") {
+                            self.pLoad.refresh(current, item);
+                        }
+                    });
+                }
+
+                self.selectedUser = {};
+                //console.logconsole.log(self.users);
                 //TODO: Stop Progress
                 //$scope.$parent.progress(false);
             };
@@ -110,14 +127,14 @@
                     self.keys.push(value.request_name);
                     if (value.request_name !== "password")
                         self.columns.push(value);
-                    console.log(value.name);
-                    console.log(value.input_type);
+                    //console.log(value.name);
+                    //console.log(value.input_type);
                 });
-                console.log(self.columns);
+                //console.log(self.columns);
             };
 
             self.err_callback = function (response) {
-                console.log(response);
+                //console.log(response);
                 general.data_error(response);
             };
 
@@ -140,6 +157,7 @@
 
             //CRUD Dialog
             self.showDialog = function (ev, row, type) {
+                console.log(type);
                 self.selectedUser = row;
                 // Appending dialog to document.body to cover sidenav in docs app
                 if (type == "D") {
@@ -168,12 +186,17 @@
                         fullscreen: $scope.customFullscreen
                     })
                     .then(function (data) {
-                        if (data.reload) {
-                            if (data.status == "I") {
+                        console.clear();
+                        console.log(data);
+                        if (data.data.reload) {
+                            if (data.data.status == "I") {
                                 self.page = self.pageCount;
-                                self.paginate(self.pageCount);
-                            } else
-                                self.paginate(self.page);
+                                self.loadPage(self.pageCount, self.pageSize);
+                                console.log('insert');
+                            } else {
+                                self.loadPage(self.page, self.pageSize);
+                                console.log('update');
+                            }
                         }
                     }, function () {
 

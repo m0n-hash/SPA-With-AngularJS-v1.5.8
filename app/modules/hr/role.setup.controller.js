@@ -88,7 +88,7 @@
                 angular.forEach(response.data.content.data, function (row, key) {
                     self.roles.push(row);
                 });
-                console.log(self.roles);
+                //console.log(self.roles);
                 //TODO: Stop Progress
                 //$scope.$parent.progress(false);
             };
