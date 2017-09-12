@@ -161,16 +161,16 @@
                     </div>
                 </div>
 
-                <div flex class="content" layout="row" layout-wrap layout-margin ng-cloak layout-align="space-around">
+                <div flex class="content" layout="row" layout-fill layout-margin ng-cloak layout-align="space-around">
                     <div class="inner-content" md-whiteframe layout-padding flex="100" flex-gt-sm="97">
                         <md-tabs class="sd-tab-noheader" id="menu-tab" md-selected="mc.selectedTab" md-border-bottom md-dynamic-height>
                             <md-tab ng-repeat="tab in mc.menu_navs" label="tab.name">
-                                <md-content class="md-padding content-view">
-                                    <div dynamic-controller="tab.controller" controller-as="tab.controllerAs">
-                                        <div ng-include="tab.template">
+                                <div class="md-padding content-view">
+                                    <div class="" dynamic-controller="tab.controller" controller-as="tab.controllerAs">
+                                        <div class="" ng-include="tab.template">
                                         </div>
                                     </div>
-                                </md-content>
+                                </div>
                             </md-tab>
                         </md-tabs>
                     </div>
@@ -226,6 +226,7 @@
         <script type="text/javascript" src="app/modules/hr/user.setup.controller.js"></script>
         <script type="text/javascript" src="app/modules/hr/user.setup.popup.js"></script>
         <script type="text/javascript" src="app/modules/hr/role.setup.controller.js"></script>
+        <script type="text/javascript" src="app/modules/system/permission.route.controller.js"></script>
         <!--Run-->
         <script type="text/javascript" src="app/core/run/statelistener.service.js"></script>
         <script type="text/javascript" src="app/core/run/rootscope.service.js"></script>

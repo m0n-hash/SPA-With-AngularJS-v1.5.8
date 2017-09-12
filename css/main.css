@@ -156,6 +156,11 @@ md-nav-bar.md-SundewTheme-theme .md-button._md-nav-button.md-unselected {
     height: 97%;
 }
 
+.content-view .stay-fit {
+    width: 100%;
+    height: 100%;
+}
+
 .header {
     padding: 4px;
     height: 44px;

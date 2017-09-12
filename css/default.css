@@ -191,3 +191,22 @@ md-dialog.md-SundewTheme-theme {
 .SelectHeader md-content._md {
     max-height: 240px;
 }
+
+.list-group{
+    padding-top:10px;
+}
+
+.list-lwrap-left {
+    
+    border-top: 1px solid #F3EEEE;
+    border-right: 1px solid #F3EEEE;
+    border-bottom: 1px solid #F3EEEE;
+    
+}
+
+.list-lwrap-right {
+    
+    border-top: 1px solid #F3EEEE;
+    border-bottom: 1px solid #F3EEEE;
+    
+}

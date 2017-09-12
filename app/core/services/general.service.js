@@ -1,8 +1,8 @@
 (function () {
     'use strict';
 
-    angular.module('common.services').factory('general', ['$window', '$mdToast', '$mdDialog', '$base64',
-        function ($window, $mdToast, $mdDialog, $base64) {
+    angular.module('common.services').factory('general', ['$window', '$filter', '$mdToast', '$mdDialog', '$base64',
+        function ($window, $filter, $mdToast, $mdDialog, $base64) {
             var self = this;
 
             self.isNumber = function (n) {
@@ -87,6 +87,36 @@
                 });
             };
 
+            var hasOwn = Object.prototype.hasOwnProperty;
+            self.getJSONKeys = function (obj) {
+                //Object.keys = Object_keys;
+                var result = Object_keys(obj);
+                return result;
+            };
+
+            function Object_keys(obj) {
+                var keys = [],
+                    name;
+                for (name in obj) {
+                    if (hasOwn.call(obj, name)) {
+                        keys.push(name);
+                    }
+                }
+                return keys;
+            }
+
+            self.filterArray = function (array, filterfunc) {
+                var result = self.filterArrays(array, filterfunc);
+                if (result.length > 0)
+                    return result[0];
+                else
+                    return null;
+            };
+
+            self.filterArrays = function (array, filterfunc) {
+                return $filter('filter')(array, filterfunc);
+            };
+
             self.TimestampToDate = function (timestamp) {
                 return self.formatDateHMS(new Date(timestamp));
             };
@@ -155,7 +185,7 @@
                 return input;
             };
 
-            self._mimeEnc=function(str){
+            self._mimeEnc = function (str) {
                 console.log(mimelib.foldLine(str, 76));
             };
 

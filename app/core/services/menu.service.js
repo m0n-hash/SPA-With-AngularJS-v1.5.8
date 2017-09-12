@@ -134,7 +134,16 @@
             name: "Settings",
             icon_mi: "settings",
             pages: [{
-
+                name: "Permission",
+                icon_mi: "verified_user",
+                type: "toggle",
+                separator: false,
+                pages: [{
+                    name: "Route Permission",
+                    state: "#/setting/route/permission",
+                    icon_mi: "vpn_lock",//wifi_lock
+                    separator: false
+                }]
             }]
         };
 

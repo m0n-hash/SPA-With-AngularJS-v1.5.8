@@ -1,0 +1,53 @@
+<div class="stay-fit" flex layout="column">
+
+    <div md-whiteframe flex="20" layout layout-align="center center">
+        <div layout-gt-xs="row" flex="40">
+            <!--Add Button Clear md-select Data-->
+            <md-input-container class="md-block" flex-gt-xs>
+                <label>Role</label>
+                <md-icon md-font-icon="material-icons" md-colors="{color:'deep-orange-800'}">equalizer</md-icon>
+                <md-select ng-change="prc.selectChange(prc.role)" ng-cloak ng-model="prc.role" data-md-container-class="SelectHeader">
+                    <md-select-header class="select-header">
+                        <input ng-keydown="$event.stopPropagation()" ng-model="prc.searchRole" type="search" placeholder="Search for a role.." class="header-searchbox md-text">
+                    </md-select-header>
+                    <md-optgroup label="Roles">
+                        <md-option ng-value="role" ng-repeat="role in prc.roles |filter:prc.searchRole">{{role.name}} ({{role.description}})</md-option>
+                    </md-optgroup>
+                </md-select>
+            </md-input-container>
+        </div>
+        <md-button class="md-accent md-raised" ng-click="prc.save()">
+            <md-tooltip md-direction="bottom">Save</md-tooltip>
+            <md-icon md-menu-origin="" md-font-icon="material-icons">save</md-icon>
+            Save
+        </md-button>
+        <md-button class="md-raised" ng-click="prc.clear()">
+            <md-tooltip md-direction="bottom">Save</md-tooltip>
+            <md-icon md-menu-origin="" md-font-icon="material-icons">autorenew</md-icon>
+            Clear
+        </md-button>
+    </div>
+
+    <div class="list-group" flex>
+        <md-content class="stay-fit" layout="row" layout-wrap>
+            <!--TODO max height 100% remove -->
+            <div style="max-height: none" ng-repeat="k in prc.keys" flex="50" ng-class="prc.l_class(k)">
+                <md-list ng-cloak>
+                    <md-subheader class="md-no-sticky">{{k}}</md-subheader>
+                    <md-list-item ng-repeat="r in prc.routes[k]">
+                        <p> {{ r.resource_method }} </p>
+                        <md-checkbox class="md-secondary" ng-change="prc.checkChange(k, r)" ng-model="r.checked"></md-checkbox>
+                    </md-list-item>
+
+                    <!--
+            <md-list-item ng-repeat="r in prc.routes">
+                <p> {{ r.resource_method }} </p>
+                <md-checkbox class="md-secondary" ng-model="r.checked"></md-checkbox>
+            </md-list-item>
+            -->
+                </md-list>
+            </div>
+        </md-content>
+    </div>
+
+</div>

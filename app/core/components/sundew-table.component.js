@@ -203,6 +203,9 @@ angular.module('common.components').controller('TableCtrl', [
         };
 
         self.getImage = function (d, item) {
+            if(d==null)
+                return;
+
             if (d[item.name] === undefined) {
                 self.imgs[d.name + d.id] = "resources/img/default.png";
                 return;

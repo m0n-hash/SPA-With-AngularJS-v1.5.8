@@ -43,6 +43,12 @@
                             controller: 'RoleCtrl',
                             controllerAs: 'rc'
                         };
+                    case "#/setting/route/permission":
+                        return {
+                            templateUrl: 'view/system/permission.route.html',
+                            controller: 'PermissionRouteCtrl',
+                            controllerAs: 'prc'
+                        };
                     default:
                         {
                             return {
