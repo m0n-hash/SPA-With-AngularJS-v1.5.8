@@ -96,7 +96,7 @@
                     //An Ugly work around for selectedTab to update. XD
                     //Set selectedTab to SelectedTab
                     mc.selectedtab = mc.selectedtab;
-                    console.log('selected', mc.selectedTab);
+                    //console.log('selected', mc.selectedTab);
                 }
             };
 

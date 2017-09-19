@@ -1,9 +1,3 @@
-/*
-    TODO: Check These Icons Json really works
-    Reference Links
-    https://codepen.io/twinsin/full/gaKvMZ
-    https://github.com/google/material-design-icons/blob/master/iconfont/codepoints
-*/
 [{
     "class": "local_pizza",
     "label": "local pizza"

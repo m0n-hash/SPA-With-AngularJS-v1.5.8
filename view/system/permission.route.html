@@ -33,10 +33,20 @@
             <!--TODO max height 100% remove -->
             <div style="max-height: none" ng-repeat="k in prc.keys" flex="50" ng-class="prc.l_class(k)">
                 <md-list ng-cloak>
-                    <md-subheader class="md-no-sticky">{{k}}</md-subheader>
+                    <md-subheader class="md-no-sticky">
+                        <div layout="row">
+                            <span flex>
+                                    {{k}}
+                            </span>
+                            <div flex="20" layout="row" layout-align="end center">
+                                <md-checkbox style="margin-right:23px" class="md-primary" aria-label="Select All" ng-checked="prc.isChecked(k)" ng-click="prc.toggleAll(k)">
+                                </md-checkbox>
+                            </div>
+                        </div>
+                    </md-subheader>
                     <md-list-item ng-repeat="r in prc.routes[k]">
                         <p> {{ r.resource_method }} </p>
-                        <md-checkbox class="md-secondary" ng-change="prc.checkChange(k, r)" ng-model="r.checked"></md-checkbox>
+                        <md-checkbox class="md-primary" ng-change="prc.checkChange(k, r)" ng-model="r.checked"></md-checkbox>
                     </md-list-item>
 
                     <!--

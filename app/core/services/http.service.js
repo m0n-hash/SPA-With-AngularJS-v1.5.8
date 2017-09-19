@@ -138,6 +138,19 @@
                 });
         };
 
+        hs.READ_JSON = function (url, callback, errcallback) {
+            $http({
+                method: "GET",
+                url: "resources/data/material-icons.json"
+            }).then(function successCallback(response) {
+                if (callback)
+                    callback(response);
+            }, function errorCallback(response) {
+                if (errcallback)
+                    errcallback(response);
+            });
+        };
+
         return hs;
     }]);
 })();

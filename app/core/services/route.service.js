@@ -49,6 +49,18 @@
                             controller: 'PermissionRouteCtrl',
                             controllerAs: 'prc'
                         };
+                    case "#/setting/menu":
+                        return {
+                            templateUrl: 'view/system/menu.setup.html',
+                            controller: 'MenuCtrl',
+                            controllerAs: 'mc'
+                        };
+                    case "#/setting/menu/permission":
+                        return {
+                            templateUrl: 'view/system/permission.menu.html',
+                            controller: 'PermissionMenuCtrl',
+                            controllerAs: 'pmc'
+                        };
                     default:
                         {
                             return {

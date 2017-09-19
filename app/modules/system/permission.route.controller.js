@@ -64,6 +64,27 @@
                 });
             };
 
+            self.isChecked = function (key) {
+                var result = general.filterArrays(self.routes[key], function (d) {
+                    return d.checked === true;
+                });
+
+                if (result === null)
+                    return false;
+                else {
+                    return result.length === self.routes[key].length;
+                }
+            };
+
+            self.toggleAll = function (key) {
+                var val = !self.isChecked(key);
+
+                angular.forEach(self.routes[key], function (value, k) {
+                    var idx = self.routes[key].indexOf(value);
+                    self.routes[key][idx].checked = val;
+                });
+            };
+
             self.selectChange = function (role) {
                 self.getRoute(role);
             };

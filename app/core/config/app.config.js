@@ -8,6 +8,7 @@
             'LOADING_SVG': './resources/loading.svg',
             'BASE_URL': 'http://localhost:1337/localhost:8084/master-api/',
             'API_URL': 'http://localhost:1337/localhost:8084/master-api/api/',
+            'MICON':'resources/data/material-icons.json',
             "DEVICE_ID": "864053a3dd15d9b980073ec137889c49ded6eff04d1aa85235b9b7260d768db9",
             "DT_OPTIONS": {
                 "iDisplayLength": 15,

@@ -141,7 +141,17 @@
                 pages: [{
                     name: "Route Permission",
                     state: "#/setting/route/permission",
-                    icon_mi: "vpn_lock",//wifi_lock
+                    icon_mi: "vpn_lock", //wifi_lock
+                    separator: false
+                }, {
+                    name: "Menu Setting",
+                    state: "#/setting/menu",
+                    icon_mi: "view_list",
+                    separator: false
+                }, {
+                    name: "Menu Permission",
+                    state: "#/setting/menu/permission",
+                    icon_mi: "dvr",
                     separator: false
                 }]
             }]

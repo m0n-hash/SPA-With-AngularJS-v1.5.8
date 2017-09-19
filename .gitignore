@@ -12,6 +12,7 @@ css/material-design-icons/MaterialIcons-Regular.ijmap
 css/material-design-icons/MaterialIcons-Regular.ttf
 css/material-design-icons/MaterialIcons-Regular.woff
 css/material-design-icons/MaterialIcons-Regular.woff2
+css/angular-material-tree.min.css
 js/angular-animate.min.js
 js/angular-aria.min.js
 js/angular-base64.min.js
@@ -45,4 +46,5 @@ js/encoding.js
 js/iconv-loader.js
 js/mimelib.js
 js/angular-download.js
+js/angular-material-tree.min.js
 app/core/tests/test.module.js
