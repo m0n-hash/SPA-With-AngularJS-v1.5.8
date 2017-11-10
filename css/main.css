@@ -15,7 +15,7 @@ body {
 }
 
 .sub-menu {
-    width: 220px;
+    width: 245px;
     background: #4D3343;
     border-right: 1px solid rgba(0, 0, 0, 0.12);
 }
@@ -140,20 +140,23 @@ md-nav-bar.md-SundewTheme-theme .md-button._md-nav-button.md-unselected {
 /*Navigation Menu*/
 
 .content-pane {
-    background: #A294A8;
+    /*background: #A294A8;*/
+    background:white;
 }
 
 .content {
-    height: 98%;
+    height: 100%;
 }
 
 .content .inner-content {
+    /*
     background: #FAFAFA;
     padding: 10px;
+    */
 }
 
 .content-view {
-    height: 97%;
+    height: 100%;
 }
 
 .content-view .stay-fit {
@@ -276,6 +279,10 @@ menu-link>a>md-icon {
 .side-menu .menu-toggle-list .md-button {
     display: block;
     text-transform: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+    white-space: nowrap;
 }
 
 .side-menu .menu-toggle-list a.md-button {

@@ -3,7 +3,7 @@
 
     var app = angular.module('SundewApp', ["ngRoute", "ngMaterial", "material.components.eventCalendar",
         "ngMessages", "ngAnimate", "ngAria", "angularMoment", "base64", "ngContextMenu", "angular-clipboard",
-        "widget.scrollbar", "angular-bind-html-compile", "download", "angular-material-tree",
+        "widget.scrollbar", "angular-bind-html-compile", "download", "angular-material-tree", "angularResizable",
         "ngCookies", "mdDataTable",
         "SundewApp.Controllers"
     ]);

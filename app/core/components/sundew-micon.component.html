@@ -1,8 +1,12 @@
 <div md-whiteframe md-colors="{background: 'grey-50'}" layout-fill>
     <md-content layout-fill>
-        <div layout="row" layout-align="center center" layout-wrap>
+        <div layout="row">
 
-            <div ng-repeat="ic in mic.micons" layout="column" layout-align="center center" class="micon-container">
+            <input flex-gt-xs type="search" style="line-height: 48px;outline: none;" placeholder="Search..." ng-model="searchTerm"/>
+
+        </div>
+        <div layout="row" layout-align="center center" layout-wrap>
+            <div ng-repeat="ic in mic.micons | filter: searchTerm" layout="column" layout-align="center center" class="micon-container">
                 <div class="icon">
                     <md-button ng-click="mic.icon_click(ic)" class="md-icon-button">
                         <md-icon md-font-icon="material-icons">{{ic.class}}</md-icon>

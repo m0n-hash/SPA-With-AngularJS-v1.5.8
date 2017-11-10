@@ -44,8 +44,13 @@
                             </div>
                         </div>
                     </md-subheader>
-                    <md-list-item ng-repeat="r in prc.routes[k]">
-                        <p> {{ r.resource_method }} </p>
+                    <md-list-item class="md-3-line" ng-repeat="r in prc.routes[k]">
+                        <div class="md-list-item-text" layout="column">
+                            <h3><b>{{r.resource_method}}</b></h3>
+                            <h4><em>{{r.method}}</em></h4>
+                            <p> {{r.path}} </p>
+                        </div>
+
                         <md-checkbox class="md-primary" ng-change="prc.checkChange(k, r)" ng-model="r.checked"></md-checkbox>
                     </md-list-item>
 

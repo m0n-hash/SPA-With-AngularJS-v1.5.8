@@ -1,1 +1,82 @@
-<h1>Menu Setup</h1>
+<div flex layout-fill>
+    <form ng-cloak name="menuForm">
+        <div layout="row" layout-fill>
+            <div flex="50" layout-fill>
+                <sd-treeview class="stay-fit" p-data-source="mc.locationData"></sd-treeview>
+            </div>
+            <div style="padding-left:20px" flex layout-fill>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Name</label>
+                    <md-icon md-font-icon="material-icons" md-colors="{color:'green-A700'}">view_list</md-icon>
+                    <input type="text" name="txtName" ng-model="mc.selectedMenu.name" minlength="1" md-maxlength="50" required/>
+                    <div ng-messages="menuForm['txtName'].$error">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength']">
+                            Invalid Name.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Description</label>
+                    <md-icon md-font-icon="material-icons" md-colors="{color:'orange-400'}">short_text</md-icon>
+                    <input type="text" name="txtDescription" style="height:80px" ng-model="mc.selectedMenu.description" minlength="1" md-maxlength="255"
+                        required/>
+                    <div ng-messages="menuForm['txtDescription'].$error">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength']">
+                            Invalid Description.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>State</label>
+                    <md-icon md-font-icon="material-icons" md-colors="{color:'pink-A700'}">widgets</md-icon>
+                    <input type="text" name="txtState" style="height:80px" ng-model="mc.selectedMenu.state" minlength="1" md-maxlength="500"
+                        required/>
+                    <div ng-messages="menuForm['txtState'].$error">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength']">
+                            Invalid State.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <div class="default-card-container" md-whiteframe md-colors="{background: 'grey-50'}">
+                        <div class="default-card-preview" layout="row" layout-align="center center">
+                            <md-icon class="img-container" style="font-size: 90px; padding-top: 40px;" md-font-icon="material-icons" width="100" height="100">{{mc.selectedMenu.icon}}</md-icon>
+                            <md-button ng-hide="mc.isHide()" class="img-button" ng-click="mc.remove()">
+                                <md-tooltip md-direction="top">Remove</md-tooltip>
+                                <md-icon md-font-icon="material-icons" aria-label="Close dialog">highlight_off</md-icon>
+                            </md-button>
+                        </div>
+                        <div class="card-detail" ng-click="mc.open_icodialog()" tabindex="1" layout="row" layout-align="center center">
+                            <div class="title-wrap card-detail-item">
+                                {{mc.selectedMenu.icon_label}}
+                            </div>
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Type</label>
+                    <md-icon md-font-icon="material-icons" md-colors="{color:'cyan-800'}">bubble_chart</md-icon>
+                    <input type="text" name="txtType" ng-model="mc.selectedMenu.type" minlength="1" md-maxlength="10" required/>
+                    <div ng-messages="menuForm['txtType'].$error">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength']">
+                            Invalid Type.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <label>Priority</label>
+                    <md-icon md-font-icon="material-icons" md-colors="{color:'purple-800'}">format_list_numbered</md-icon>
+                    <input type="number" name="txtPriority" ng-model="mc.selectedMenu.priority" minlength="1" md-maxlength="255" required/>
+                    <div ng-messages="menuForm['txtPriority'].$error">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength']">
+                            Invalid Priority.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container style="padding-left:35px" class="md-block" flex-gt-xs>
+                    <md-checkbox md-no-ink ng-model='mc.selectedMenu.separator' class='md-primary sd-checkbox'>Is separator?</md-checkbox>
+                </md-input-container>
+            </div>
+        </div>
+    </form>
+</div>

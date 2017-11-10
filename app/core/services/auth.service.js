@@ -16,10 +16,12 @@
         //@param url, headers, credential, callback, errcallback
         self.logIn = function (credential, success_callback) {
             self.scb = success_callback;
+            
             http.POST(config.API_URL + 'auth', store.HEADER(), credential, self.success_callback, self.error_callback);
         };
 
         self.success_callback = function (response) {
+            console.log('response s in auth', response);
             if (response.data.code == 200) {
                 console.log(response);
 
@@ -39,6 +41,7 @@
         };
 
         self.error_callback = function (response) {
+            console.log('response e in auth', response);
             general.data_error(response);
         };
 

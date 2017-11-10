@@ -13,7 +13,8 @@
                         $element: element,
                         $attrs: attrs,
                     };
-
+                    console.log(scope.$eval(attrs.controllerAs));
+                    console.log(scope.$eval(attrs.dynamicController));
                     element.data('$Controller', $controller(scope.$eval(attrs.dynamicController) +
                         " as " + scope.$eval(attrs.controllerAs), locals));
                 },

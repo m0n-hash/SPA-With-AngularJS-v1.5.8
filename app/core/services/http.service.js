@@ -48,8 +48,25 @@
                 return response;
             });
         };
+        
+        hs.test = function (headers) {
+            console.log(headers);
+            $http({
+                method: "GET",
+                url: "http://192.168.8.2:8084/master-api/api",
+                headers: headers,
+                data: {},
+                timeout: hs.timeout
+            }).then(function successCallback(response) {
+                console.log(response);
+            }, function errorCallback(response) {
+                //TODO: Error Handling 
+                console.log(response);
+            });
+        };
 
         hs.POST = function (url, headers, jsondata, callback, errcallback, extra) {
+
             $http({
                 method: "POST",
                 url: url,

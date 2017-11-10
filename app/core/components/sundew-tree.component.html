@@ -1,0 +1,81 @@
+<div layout="row" class="stay-fit">
+    <div layout="column" class="stay-fit" flex>
+        <md-toolbar layout="row" style="background-color:#4D3343">
+
+            <div layout="row" flex="50" layout-align="start center">
+                <div layout="row" class="md-toolbar-tools" layout-align="start center">
+                    <md-button class="md-icon-button " ng-click="tc.add($event)">
+                        <md-tooltip md-direction="bottom">Add</md-tooltip>
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">add</md-icon>
+                    </md-button>
+                    <!--
+                    <md-button class="md-icon-button " ng-click="tc.edit()">
+                        <md-tooltip md-direction="bottom">Edit</md-tooltip>
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">mode_edit</md-icon>
+                    </md-button>
+                    -->
+                    <md-button class="md-icon-button " ng-click="tc.delete()">
+                        <md-tooltip md-direction="bottom">Delete</md-tooltip>
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">delete</md-icon>
+                    </md-button>
+                </div>
+            </div>
+
+            <div layout="row" flex="50" layout-align="end center">
+                <div layout="row" class="md-toolbar-tools" layout-align="end center">
+                    <md-button class="md-icon-button " ng-click="tc.up()">
+                        <md-tooltip md-direction="bottom">Up</md-tooltip>
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">file_upload</md-icon>
+                    </md-button>
+
+                    <md-button class="md-icon-button " ng-click="tc.upOnLvl()">
+                        <md-tooltip md-direction="bottom">Up One Level</md-tooltip>
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">format_indent_decrease</md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button " ng-click="tc.downOnLvl()">
+                        <md-tooltip md-direction="bottom">Down One Level</md-tooltip>
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">format_indent_increase</md-icon>
+                    </md-button>
+
+                    <md-button class="md-icon-button " ng-click="tc.down()">
+                        <md-tooltip md-direction="bottom">Down</md-tooltip>
+                        <md-icon md-menu-origin="" md-font-icon="material-icons">file_download</md-icon>
+                    </md-button>
+                </div>
+
+            </div>
+
+        </md-toolbar>
+        <md-content class="stay-fit" layout="column" flex>
+            <input type="search" style="line-height: 48px; padding-left: 16px; border: none; outline: none;" placeholder="Search..."
+                ng-model="searchTerm" />
+
+            <md-tree style="background:white" ng-model="tc.selected" restrict-selection="depth" flex>
+                <md-branch branch-repeat="header in tc.pDataSource | filter: $mdBranchFilter(searchTerm) | orderBy: 'priority'" class="md-2-line"
+                    select hide-checkbox>
+                    <div class="md-branch-text" ng-click="tc.treeClick(undefined,null,header)">
+                        <h3>{{header.name}}</h3>
+                        <p>{{header.description}}</p>
+                    </div>
+
+                    <md-branch branch-repeat="menu in header.children | filter: $mdBranchFilter(searchTerm) | orderBy: 'priority'" class="md-2-line"
+                        select hide-checkbox>
+                        <div class="md-branch-text" ng-click="tc.treeClick(null,header,menu)">
+                            <h3>{{menu.name}}</h3>
+                            <p>{{menu.description}}</p>
+                        </div>
+
+                        <md-branch branch-repeat="child in menu.children | filter: $mdBranchFilter(searchTerm) | orderBy: 'priority'" class="md-2-line"
+                            select hide-checkbox>
+                            <div class="md-branch-text" ng-click="tc.treeClick(header,menu,child)">
+                                <h3>{{child.name}}</h3>
+                                <p>{{child.description}}</p>
+                            </div>
+                        </md-branch>
+                    </md-branch>
+                </md-branch>
+            </md-tree>
+        </md-content>
+
+    </div>
+</div>

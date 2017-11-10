@@ -1,7 +1,7 @@
 <div flex layout-fill>
   <div layout="row" layout-fill>
-    <!--
-    <div flex="50">
+  
+    <div flex="80">
       <div md-whiteframe flex="100" flex-gt-sm="100" layout="column" layout-fill>
         <md-event-calendar ng-model="selected" md-events="events" md-event-click="eventClicked($selectedEvent)" md-label="title"
           md-show-create-link="true" md-create-event-click="eventCreatea($date)" md-create-disabled="true" auto-height="" class="sundew-theme">
@@ -13,14 +13,18 @@
         </md-event-calendar>
       </div>
     </div>
-  -->
-    <div flex="50" layout-fill>
-      <sd-treeview></sd-treeview>
+  <!--
+    <div flex="80" layout-fill>
+      <sd-treeview p-data-source="dc.locationData"></sd-treeview>
+      
       <sd-img img-model="dc.testdd"></sd-img>
       <button ng-click="dc.test(ev)">test</button>
       <sd-micon layout-fill></sd-micon>
 
       <sd-drive p-reload="dc.test()" p-context="true"></sd-drive>
+      
+    </div>-->
+    <div flex layout-fill style="background:#A294A8" resizable r-directions="['left']" r-flex="true">
 
     </div>
   </div>

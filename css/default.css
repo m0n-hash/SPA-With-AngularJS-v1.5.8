@@ -89,6 +89,14 @@ md-toast {
     border-radius: 5;
 }
 
+.xx-small-sc-dialog {
+    max-width: 50%;
+    max-height: 50%;
+    width: 50%;
+    height: 200px;
+    border-radius: 5;
+}
+
 .sd-datepicker {
     margin-left: -15px;
 }
@@ -192,21 +200,17 @@ md-dialog.md-SundewTheme-theme {
     max-height: 240px;
 }
 
-.list-group{
-    padding-top:10px;
+.list-group {
+    padding-top: 10px;
 }
 
 .list-lwrap-left {
-    
     border-top: 1px solid #F3EEEE;
     border-right: 1px solid #F3EEEE;
     border-bottom: 1px solid #F3EEEE;
-    
 }
 
 .list-lwrap-right {
-    
     border-top: 1px solid #F3EEEE;
     border-bottom: 1px solid #F3EEEE;
-    
 }

@@ -47,7 +47,7 @@
     <script type="text/javascript" src="js/angular-download.js"></script>
     <script type="text/javascript" src="js/angular-material-tree.min.js"></script>
     <script type="text/javascript" src="js/angular-mocks.js"></script>
-
+    <script type="text/javascript" src="js/angular-resizable.min.js"></script>
     <!--
     TODO: Import External Nodejs Libraries to angular
     <script type="text/javascript" src="js/require.js"></script>
@@ -89,6 +89,7 @@
     <link href="css/angular-material-event-calendar.min.css" rel="stylesheet" />
     <link href="css/eventCalendar-primary.scss" rel="stylesheet" />
     <link href="css/angular-material-tree.min.css" rel="stylesheet"/>
+    <link href="css/angular-resizable.min.css" rel="stylesheet"/>
     <!--Components css-->
     <link rel="stylesheet" href="app/core/components/sundew-table.component.css" />
     <link rel="stylesheet" href="app/core/components/sundew-drive.component.css" />
@@ -164,11 +165,11 @@
                     </div>
                 </div>
 
-                <div flex class="content" layout="row" layout-fill layout-margin ng-cloak layout-align="space-around">
-                    <div class="inner-content" md-whiteframe layout-padding flex="100" flex-gt-sm="97">
+                <div flex class="content" layout="row" layout-fill ng-cloak>
+                    <div class="inner-content" flex="100" flex-gt-sm="100">
                         <md-tabs class="sd-tab-noheader" id="menu-tab" md-selected="mc.selectedTab" md-border-bottom md-dynamic-height>
                             <md-tab ng-repeat="tab in mc.menu_navs" label="tab.name">
-                                <div class="md-padding content-view">
+                                <div class="content-view">
                                     <div class="" dynamic-controller="tab.controller" controller-as="tab.controllerAs">
                                         <div class="" ng-include="tab.template">
                                         </div>
@@ -200,6 +201,7 @@
         <script type="text/javascript" src="app/core/components/sundew-micon.component.js"></script>
         <script type="text/javascript" src="app/core/components/sundew-micon.js"></script>
         <script type="text/javascript" src="app/core/components/sundew-micon.dialog.js"></script>
+        <script type="text/javascript" src="app/core/components/sundew-tree.dialog.js"></script>
         <script type="text/javascript" src="app/core/components/sundew-tree.component.js"></script>
         <script type="text/javascript" src="app/core/components/sundew-tree.js"></script>
         <!--Services-->

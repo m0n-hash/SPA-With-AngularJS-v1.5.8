@@ -24,9 +24,11 @@
             };
 
             self.routeCallback = function (response) {
+                
                 self.tempRoutes = angular.copy(response.data.content);
                 self.routes = angular.copy(response.data.content);
                 self.keys = general.getJSONKeys(self.routes);
+                console.log(self.routes);
             };
 
             self.errCallback = function (response) {

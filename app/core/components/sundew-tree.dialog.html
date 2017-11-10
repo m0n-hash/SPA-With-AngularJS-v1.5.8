@@ -1,0 +1,29 @@
+<md-dialog class="xx-small-sc-dialog" aria-label="" md-theme="SundewTheme">
+    <md-toolbar style="background-color:#4D3343">
+        <div class="md-toolbar-tools">
+            <legend style="padding: 3px 0 0 10px;">
+                Sundew Tree
+            </legend>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="dtc.answer(true)">
+                <md-icon md-font-icon="material-icons" aria-label="Close dialog">check</md-icon>
+            </md-button>
+            <md-button class="md-icon-button" ng-click="dtc.answer(false)">
+                <md-icon md-font-icon="material-icons" aria-label="Close dialog">close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+
+        <md-content class="md-padding content-view" style="height:100px">
+            <div flex layout="column">
+                <md-select ng-model="dtc.selected">
+                    <md-option ng-repeat="type in dtc.types" ng-value="type">
+                        {{type}}
+                    </md-option>
+                </md-select>
+            </div>
+        </md-content>
+
+    </md-dialog-content>
+</md-dialog>
